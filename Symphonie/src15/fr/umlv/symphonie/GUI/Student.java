@@ -40,6 +40,10 @@ public class Student {
         notesMap.put(course,new HashMap<String,Double>());
         return notesMap;
     }
+    
+    public void setComment(String comment){
+        this.comment = comment;
+    }
 
     public void setNoteFromCourseAndIntitulate(String course,String intitulate,double note){
        notesMap.get(course).put(intitulate,note);
