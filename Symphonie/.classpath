@@ -2,7 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src15"/>
 	<classpathentry kind="src" path="test15"/>
-	<classpathentry exported="true" kind="lib" path="lib/postgresql-8.0.309.jdbc3.jar"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/gnujaxp.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.0-pre2.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.0-pre2.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-8.0.309.jdbc3.jar"/>
 	<classpathentry kind="output" path="classes15"/>
 </classpath>
