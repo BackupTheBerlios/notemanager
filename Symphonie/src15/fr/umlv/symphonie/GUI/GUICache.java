@@ -44,7 +44,8 @@ public class GUICache {
 	 * @throws ParserConfigurationException
 	 */
 	private GUICache() throws SAXException,IOException,ParserConfigurationException{					
-		LanguageParser.parse(defaultLangage,mapLangage);				
+		LanguageParser.parse(defaultLangage,mapLangage);	
+		toolBar.setFloatable(false); 			
 	}
 	/**
 	 * 

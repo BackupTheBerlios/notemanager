@@ -51,6 +51,16 @@ import fr.umlv.symphonie.GUI.menu.view.ItemView;
 import fr.umlv.symphonie.GUI.menu.view.ItemViewJury;
 import fr.umlv.symphonie.GUI.menu.view.ItemViewStudent;
 import fr.umlv.symphonie.GUI.menu.view.ItemViewTeacher;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolAdminMode;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolFormula;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolPrint;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolRedo;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolSave;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolTools;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolUndo;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolViewJury;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolViewStudent;
+import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
 
 /**
  * @author jraselin
@@ -63,7 +73,7 @@ public class StartGUI {
 	private static void createAndShowGUI(){
 		JFrame frame = new JFrame("Symphonie");
 		
-		frame.setSize(640,400);
+		frame.setSize(1000,860);
 		
 		
 		
@@ -117,6 +127,18 @@ public class StartGUI {
 		ItemFormulaPlugin foss = new ItemFormulaPlugin(cache);
 		ItemFormulaPluginAdd fossm = new ItemFormulaPluginAdd(cache);
 		ItemFormulaPluginRemove fodss = new ItemFormulaPluginRemove(cache);
+		
+		
+		ItemToolAdminMode toooofhjfjhfjh = new ItemToolAdminMode(cache);
+		ItemToolFormula gjkgkj = new ItemToolFormula(cache);
+		ItemToolPrint poig = new ItemToolPrint(cache);
+		ItemToolRedo ghkf = new ItemToolRedo(cache);
+		ItemToolSave gjkg = new ItemToolSave(cache);
+		ItemToolTools jkgjk = new ItemToolTools(cache);
+		ItemToolUndo undojktg = new ItemToolUndo(cache);
+		ItemToolViewJury fsd = new ItemToolViewJury(cache);
+		ItemToolViewStudent fezgza = new ItemToolViewStudent(cache);
+		ItemToolViewTeacher rfzefz = new ItemToolViewTeacher(cache);
 		
 		
 		/*
