@@ -52,6 +52,7 @@ public class Cache {
  
  /**
   * It's a static method for create an singleton's class
+  * @return Cache is object represent the class
  */
  public static Cache newCache() throws SQLException, DriverClassNotFoundException, ConnectionFailException
  {
