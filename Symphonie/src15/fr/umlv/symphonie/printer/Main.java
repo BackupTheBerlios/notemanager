@@ -7,7 +7,6 @@
 package fr.umlv.symphonie.printer;
 
 import java.awt.event.ActionListener;
-import java.awt.print.Printable;
 import java.io.File;
 import javax.swing.*;
 import java.awt.Container;

@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.Iterator;
 
 
-import fr.umlv.database.ConnectionFailException;
-import fr.umlv.database.DefaultSymphonieDatabaseRequest;
-import fr.umlv.database.DriverClassNotFoundException;
+import fr.umlv.symphonie.database.ConnectionFailException;
+import fr.umlv.symphonie.database.DefaultSymphonieDatabaseRequest;
+import fr.umlv.symphonie.database.DriverClassNotFoundException;
 
 
 
