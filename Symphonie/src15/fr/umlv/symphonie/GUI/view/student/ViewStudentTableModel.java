@@ -27,24 +27,41 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	
 	
 	private final List<String> listCourses = new ArrayList<String>();
-	private final Map<String, List<IntitulateCoefficient>> mapCoursesIntitulates = new HashMap<String, List<IntitulateCoefficient>>();
-	private final Cache cache;
+	private final Map<String, List<IntitulateCoefficientNote>> mapCoursesIntitulates = new HashMap<String, List<IntitulateCoefficientNote>>();
+	private Student student;
 	/**
 	 * 
 	 * @param cache
 	 */
 	public ViewStudentTableModel(Cache cache){
-		this.cache=cache;	
+		fillField(cache);
+		fillModel(cache.getMapStudent().get("PAPI JOJO"));
+	//	debug();
 	}
+	
+	
+	
+	private void debug(){
+		for(String course : listCourses)
+		{
+			List<IntitulateCoefficientNote> list = mapCoursesIntitulates.get(course);
+			System.out.println(course + ":");
+			for(IntitulateCoefficientNote o : list){				
+				System.out.println(o.getIntitulate());											
+			}					
+			System.out.println("");
+		}			
+	}
+	
 	
 	/**
 	 * 
 	 * @param map
 	 * @return
 	 */
-	private List<IntitulateCoefficient> fillListIntitulateCoefficient(Map<String,Integer> map){
+	private List<IntitulateCoefficientNote> fillListIntitulateCoefficient(Map<String,Integer> map){
 		Iterator<Map.Entry<String,Integer>> it = map.entrySet().iterator();
-		List<IntitulateCoefficient> list = new ArrayList<IntitulateCoefficient>();
+		List<IntitulateCoefficientNote> list = new ArrayList<IntitulateCoefficientNote>();
 		// fill list
 		while(it.hasNext()){			
 			Map.Entry<String,Integer> tmp = it.next();
@@ -58,8 +75,8 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * @param coefficient
 	 * @param list
 	 */
-	private void fillList(final String intitulate,final int coefficient,List<IntitulateCoefficient> list){
-		list.add(new IntitulateCoefficient(){
+	private void fillList(final String intitulate,final int coefficient,List<IntitulateCoefficientNote> list){
+		list.add(new IntitulateCoefficientNote(){
 			public String getIntitulate(){
 				return intitulate; 
 			}
@@ -78,7 +95,8 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * 
 	 * @param student
 	 */
-	public void fillModel(Cache cache,String studentName){
+	public void fillField(Cache cache){
+		
 		Map<String,Map<String,Integer>> map= cache.getMapCoursesIntitulates();
 		Iterator<Map.Entry<String,Map<String,Integer>>> it = map.entrySet().iterator();
 		while (it.hasNext()) {
@@ -86,18 +104,25 @@ public class ViewStudentTableModel extends AbstractTableModel{
 			// add course to the list
 			listCourses.add(pairs.getKey());
 			// fill list intitulatecoefficient to map
-			fillListIntitulateCoefficient(pairs.getValue());									
+			mapCoursesIntitulates.put(pairs.getKey(),fillListIntitulateCoefficient(pairs.getValue()));									
 			}				
+	}
+	/**
+	 * 
+	 * @param student
+	 */
+	public void fillModel(Student student){		
+		this.student=student;
 	}
 	
 	private int getMaxIntitulate(){
 		int max=0;
 		for(String course : listCourses)
 		{
-			int size = mapCoursesIntitulates.get(course).size();
+			int size = mapCoursesIntitulates.get(course).size();			
 			if(size>max)
 				max=size;			
-		}
+		}		
 		return max;
 	}
 	
@@ -112,7 +137,7 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	/* (non-Javadoc)
 	 * @see javax.swing.table.TableModel#getColumnCount()
 	 */
-	public int getColumnCount() {
+	public int getColumnCount() {				
 		return getMaxIntitulate() + 1;		
 	}
 
@@ -120,8 +145,11 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * @see javax.swing.table.TableModel#getColumnName(int)
 	 */
 	public String getColumnName(int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		if(columnIndex==1){
+			return "java";
+		}
+		else return Integer.toString(columnIndex+1);
+		
 	}
 
 	
@@ -138,36 +166,38 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 */
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		
-		if(rowIndex%5==1)
-		 return listCourses.get(rowIndex/5);
+		// for course row
+		if(rowIndex%5 ==0  && columnIndex==0){			
+			return listCourses.get(rowIndex/5);
+			
+		}		 
 		// for intitulates row
-		else if(rowIndex%5==2)
+		else if(rowIndex%5==1 && columnIndex >= 1)
 		{
+			List<IntitulateCoefficientNote> list = mapCoursesIntitulates.get(listCourses.get(rowIndex/5));
+			int size = columnIndex-1;
+			System.out.println(size);
+			//IntitulateCoefficientNote tmp = list.get(columnIndex-1);
 			
-			
+			return null;
+			//return mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getIntitulate();			
 		}
+		// for coefficient row
+		else if(rowIndex%5==2 && columnIndex >= 1)
+		{
+			return null;
+			//return mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getCoefficient();			
+		}
+		// for note row
+		else if(rowIndex%5==3 && columnIndex >= 1){
+			//String course=listCourses.get(rowIndex/5);
+			//String intitulate = mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getIntitulate();			
+			//return student.getNoteFromCourseAndIntitulate(course,intitulate);
+			return "0";
+		}
+		else return null;
 		
 		
-		
-		
-	
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see javax.swing.table.TableModel#setValueAt(java.lang.Object, int, int)
-	 */
-	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+		 
 	}
 }

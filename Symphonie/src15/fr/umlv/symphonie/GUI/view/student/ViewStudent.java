@@ -21,15 +21,18 @@ import fr.umlv.symphonie.GUI.Cache;
 public class ViewStudent {
 
 	private final JTable table;
-	private final JScrollPane pane = new JScrollPane();
+	private final JScrollPane pane;// = new JScrollPane();
 	/**
 	 * 
 	 * @param cache
 	 */
 	public ViewStudent(Cache cache){
-		table = new JTable(new ViewStudentTableModel(cache),new ViewStudentTableColumnModel());
-		table.setShowGrid(false);
-		pane.add(table);
+		
+		ViewStudentTableModel model = new ViewStudentTableModel(cache);
+		
+		table = new JTable(model,new ViewStudentTableColumnModel(model));		
+		table.setShowGrid(false);		
+		pane = new JScrollPane(table);							
 	}
 	
 	/**

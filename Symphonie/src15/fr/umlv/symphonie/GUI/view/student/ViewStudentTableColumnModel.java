@@ -7,6 +7,7 @@
 package fr.umlv.symphonie.GUI.view.student;
 
 import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableColumn;
 
 /**
  * @author jraselin
@@ -20,7 +21,18 @@ public class ViewStudentTableColumnModel extends DefaultTableColumnModel {
 	 * Comment for <code>serialVersionUID</code>
 	 */
 	private static final long serialVersionUID = 1L;
-
+	public ViewStudentTableColumnModel(ViewStudentTableModel model){
+		super();
+		
+		for(int index=0;index<model.getColumnCount();index++){
+			
+			TableColumn column = new TableColumn(index);
+			this.addColumn(column);		
+		}
+		
+	
+		
+	}
 	
 	
 	

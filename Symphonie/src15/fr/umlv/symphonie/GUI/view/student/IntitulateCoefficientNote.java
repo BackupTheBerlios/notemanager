@@ -12,7 +12,7 @@ package fr.umlv.symphonie.GUI.view.student;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public interface IntitulateCoefficient {
+public interface IntitulateCoefficientNote {
 	
 	public String getIntitulate();	
 	public int getCoefficient();
