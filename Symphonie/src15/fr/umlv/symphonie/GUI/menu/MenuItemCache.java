@@ -27,8 +27,10 @@ public class MenuItemCache {
 	static private final Map<String,String> map =new HashMap<String,String>();
 	static private final Map<String,MenuItemCache> registry = new HashMap<String,MenuItemCache>();
 	static private LanguageCache cache;
+	private final String defaultLangage = "menu_FR.xml";
+	
 	public MenuItemCache() throws SAXException,IOException,ParserConfigurationException{					
-			cache = LanguageCache.newLanguageCache("Menu_FR.xml",map);
+			cache = LanguageCache.newLanguageCache(defaultLangage,map);
 			// fill language map 
 			cache.parseLanguageConfigFile();						
 	}

@@ -1,0 +1,9 @@
+user=jraselin
+password=555666
+driver=org.postgresql.Driver
+database=//sqletud/GenieLogiciel
+DbSystem=postgresql
+
+
+
+

@@ -88,12 +88,12 @@ public class StartGUI {
 		
 		}
 		catch(SAXException s){
-			
+			System.out.println(s.getMessage());
 		}
 		catch (ParserConfigurationException pce){
-			
+			System.out.println(pce.getMessage());
 		}catch(IOException ioe){
-			
+			System.out.println(ioe.getMessage());
 		}
 		finally{
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

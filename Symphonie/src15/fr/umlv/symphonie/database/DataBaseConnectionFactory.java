@@ -6,9 +6,15 @@
  */
 package fr.umlv.symphonie.database;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.InvalidPropertiesFormatException;
+import java.util.Properties;
 /**
  * @author jraselin
  *
@@ -16,21 +22,38 @@ import java.sql.SQLException;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class DataBaseConnectionFactory {
+	
+	
+	
+	
 	/**
 	 * try to connect to the database : sqletud
 	 * 
 	 * @return an object Connection (@see java.sql.Connection)
 	 */
 	public static Connection getConnection() throws ConnectionFailException,DriverClassNotFoundException{
-		try {				
-			Class.forName("org.postgresql.Driver");									
-			return DriverManager.getConnection("jdbc:postgresql://sqletud/GenieLogiciel:","jraselin","555666");
+		try {		
+			Properties props = new Properties();
+			props.load(new FileInputStream("DatabaseConfig"));							
+			Class.forName(props.getProperty("driver"));
+			String connection = "jdbc:" + props.getProperty("DbSystem") + ":" + props.getProperty("database"); 										
+			return DriverManager.getConnection(connection,props.getProperty("user"),props.getProperty("password"));
 			
-		} catch (SQLException e) {			
+		} 
+		catch (FileNotFoundException fne){
+			throw new ConnectionFailException("File config file not found : " + fne.getMessage());	
+		}
+		catch(InvalidPropertiesFormatException ie){
+			throw new ConnectionFailException(ie.getMessage());
+		}
+		catch (IOException ioe){
+			throw new ConnectionFailException(ioe.getMessage());
+		}
+		catch (SQLException e) {			
 			throw new ConnectionFailException(e.getMessage());	
 			
 		}catch (ClassNotFoundException ce){
-			throw new DriverClassNotFoundException(ce.getMessage());		
+			throw new DriverClassNotFoundException( ce.getMessage());		
 		}		
 	}
 }
