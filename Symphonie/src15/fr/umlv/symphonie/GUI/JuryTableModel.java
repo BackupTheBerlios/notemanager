@@ -1,10 +1,11 @@
+package fr.umlv.symphonie.GUI;
 /*
  * 
  *
  */
-package fr.umlv.symphonie.GUI;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.table.AbstractTableModel;
 
@@ -23,6 +24,7 @@ public class JuryTableModel  extends AbstractTableModel {
     
     private final ArrayList<String> listStudents;
     private final ArrayList<String> listCourses;
+    private final HashMap<String, Map<String,Integer> > mapCoursesIntitulates;
     private final Cache cache;
     
     public JuryTableModel(Cache cache)
@@ -30,6 +32,7 @@ public class JuryTableModel  extends AbstractTableModel {
         this.cache = cache; 
         this.listStudents = (ArrayList<String>) cache.getListStudents();
         this.listCourses = (ArrayList<String>) cache.getListCourses();
+        this.mapCoursesIntitulates = (HashMap<String, Map<String,Integer>>)cache.getMapCoursesIntitulates();
     }
     
  
@@ -38,7 +41,7 @@ public class JuryTableModel  extends AbstractTableModel {
      * @see javax.swing.table.TableModel#getRowCount()
      */
     public int getRowCount() {
-        return listStudents.size();
+        return listStudents.size()+2;
     }
 
     /* (non-Javadoc)
@@ -49,7 +52,7 @@ public class JuryTableModel  extends AbstractTableModel {
         return listCourses.size()+3;
     }
     
-    public String getColumnName(int column)
+  /* public String getColumnName(int column)
     {
         int lastColumn = listCourses.size()+2;
         
@@ -63,25 +66,58 @@ public class JuryTableModel  extends AbstractTableModel {
         
     return listCourses.get(column-1);
     }
-
+*/
     /* (non-Javadoc)
      * @see javax.swing.table.TableModel#getValueAt(int, int)
      */
     public Object getValueAt(int rowIndex, int columnIndex) {
         
-        int lastColumn = listCourses.size()+2;
+        int lastColumn = listCourses.size()+3;
         String elt = new String();
-        if(rowIndex >=0){
+        
+        
+       
+        switch(rowIndex)
+        {
+        case 0:
+        if(columnIndex == 0 || columnIndex == lastColumn)
+            return "Nom des etudiants";
+
+        if(columnIndex == 1)
+            return "Matiere";
+        if(columnIndex == lastColumn-1)
+            return "Avis du Jury";
+      
+      
+        elt = listCourses.get(columnIndex-2);
+      
+        return elt;
+                    
+           
+        case 1:
+            if(columnIndex == 1)
+            return "Intitulé";
+                
+            
+        case 2:
+            if(columnIndex == 1)
+                return "Coefficient";
+        
+        default:
+        
+        
+        if(rowIndex >= 3){
             
         
             if(columnIndex == 0 || columnIndex == lastColumn)
                 {
-               elt = listStudents.get(rowIndex);
+             //  elt = listStudents.get(rowIndex-3);
                 }
 
          
             
            
+        }
         }
     
         return elt;

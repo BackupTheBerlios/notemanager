@@ -1,9 +1,9 @@
+package fr.umlv.symphonie.GUI;
+ 
 /*
  * 
  *
  */
-package fr.umlv.symphonie.GUI;
-
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
 

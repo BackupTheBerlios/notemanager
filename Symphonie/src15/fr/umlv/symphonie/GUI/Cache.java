@@ -1,3 +1,5 @@
+
+package fr.umlv.symphonie.GUI;
 /*
  * Created on 14 mars 2005
  *
