@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<menuBar>
+<file>Fichier</file>
+<fileSave>Enregistrer</fileSave>
+<fileExit>Quitter</fileExit>
+<fileExport>Exporter</fileExport>
+<filePrint>Imprimer</filePrint>
+<fileImport>Importer</fileImport>
+
+<edit>Edition</edit>
+<editUndo>Annuler/Retour</editUndo>
+<editRedo>Retablir</editRedo>
+<editCut>Couper</editCut>
+<editPaste>Coller</editPaste>
+<editDelete>Supprimer</editDelete>
+<editSelectAll>Tout Selectionner</editSelectAll>
+
+<view>Affichage</view>
+<viewJury>Vue Jury</viewJury>
+<viewTeacher>Vue Enseignant</viewTeacher>
+<viewStudent>Vue Etudiant</viewStudent>
+
+<formula>Formule</formula>
+<formulaAdd>Ajouter Formule</formulaAdd>
+<formulaDelete>Supprimer Formule</formulaDelete>
+<formulaEdit>Editer Formule</formulaEdit>
+<formulaPlugin>Plug-In</formulaPlugin>
+<formulaPluginAdd>Ajouter</formulaPluginAdd>
+<formulaPluginRemove>Enlever</formulaPluginRemove>
+
+<tools>Outils</tools>
+<toolsConnection>Paramètres De Connection</toolsConnection>
+<toolsStats>Statistiques</toolsStats>
+<toolsAdmin>Mode Administrateur</toolsAdmin>
+
+<adminInsertStudent>Insérer Etudiant</adminInsertStudent>
+<adminDeleteStudent>Supprimer Etudiant</adminDeleteStudent>
+<adminInsertCourse>Insérer Matière</adminInsertCourse>
+<adminDeleteCourse>Supprimer Matière</adminDeleteCourse>
+</menuBar>

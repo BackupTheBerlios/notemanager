@@ -21,37 +21,23 @@ import org.xml.sax.helpers.DefaultHandler;
 public class LanguageHandler extends DefaultHandler {
 
 	private final Map<String,String> map;
+	private String key;	
+	private String value;
 	
 	protected LanguageHandler(Map<String,String> map){
 		this.map = map;
 	}
-			
-	/**
-	 * calls on the start of the XML document
-	 */
-	public void startDocument() throws SAXException{
-		
-	}
-	/**
-	 * calls at the end of the XML document
-	 */
-	public void endDocument() throws SAXException{
-		
-	}
-	
-	
+						
 	public void startElement(String uri, String localName, String qName, Attributes attrs) throws SAXException {
-		
+		key=qName;						
 	}
 	
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-		
+		if(!qName.equalsIgnoreCase("menuBar"))
+			map.put(key,value);
 	}
 	
-	public void chararters(char[] buf, int offset, int len) throws SAXException {
-		
-		
-	}
-	
-	
+	public void characters(char[] buf, int offset, int len) throws SAXException {		
+		value=new String(buf,offset,len);		
+	}	
 }
