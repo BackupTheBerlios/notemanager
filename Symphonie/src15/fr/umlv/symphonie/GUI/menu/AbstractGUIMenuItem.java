@@ -75,6 +75,14 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 	}
 	/**
 	 * 
+	 * @return
+	 */
+	public GUICache getGuiCache(){
+		return guiCache;
+	}
+	
+	/**
+	 * 
 	 */
 	abstract public void setAction();
 }
