@@ -16,7 +16,7 @@ import fr.umlv.symphonie.database.DriverClassNotFoundException;
  */
 public class StudentsCache extends Cache{
 
-    private final Map<String,String> comment;
+    //private final Map<String,String> comment;
               
     public StudentsCache() throws SQLException,DriverClassNotFoundException,ConnectionFailException
     {
