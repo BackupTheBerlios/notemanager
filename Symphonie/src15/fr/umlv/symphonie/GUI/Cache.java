@@ -17,7 +17,7 @@ import fr.umlv.symphonie.database.SymphonieDatabaseRequest;
 
 /**
  * @author jrichert
- *
+ *This class create an object compose with all necessary elements for views 
  */
 public class Cache {
 
@@ -50,7 +50,9 @@ public class Cache {
      mapStudents = fillMapStudents();
  }
  
- 
+ /**
+  * It's a static method for create an singleton's class
+ */
  public static Cache newCache() throws SQLException, DriverClassNotFoundException, ConnectionFailException
  {
      if(!isInstance)
@@ -64,8 +66,8 @@ public class Cache {
  
  
  /**
-  * 
-  * @return
+  * Fill a Map which contains keys' courses associate with a map where intitulates are coupled with coefficient 
+  * @return map fill by method
   * @throws SQLException
   * @throws DriverClassNotFoundException
   * @throws ConnectionFailException
@@ -80,6 +82,13 @@ public class Cache {
      return map;          
  }
  
+ /**
+  * Fill a Map which contains an element associate with a number (line number)
+  * @return the map fill in method
+  * @throws ConnectionFailException 
+  * @throws SQLException
+  * @throws DriverClassNotFoundException
+  */
  private Map<Integer,Student> fillMapStudents() throws ConnectionFailException, SQLException, DriverClassNotFoundException{
      HashMap<Integer,Student> map = new HashMap<Integer,Student>();
      Set<String> setNameStudent = listStudents.keySet();
@@ -104,12 +113,29 @@ public class Cache {
      return map;
  }
  
+ /**
+  * Getter for an arrayList
+  * @return listCourses
+  */
  public List<String> getListCourses(){
      return listCourses;
  }
  
+ /**
+  *  Getter for the map which associates a number and a student
+  * @return the mapStudents
+  */
  public Map<Integer,Student> getMapStudent(){
      return mapStudents;
  }
+ 
+ /**
+  * Getter for the map which associate the course with intitulates and a coefficient
+  * @return the mapCoursesIntitulates
+  */
+ public Map<String, Map<String,Integer> > getMapCoursesIntitulates(){
+     return mapCoursesIntitulates;
+ }
+
  
 }
