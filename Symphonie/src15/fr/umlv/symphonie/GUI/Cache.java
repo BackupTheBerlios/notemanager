@@ -82,41 +82,6 @@ public class Cache {
   * @throws ConnectionFailException 
   * @throws SQLException
   * @throws DriverClassNotFoundException
-  *//*
- private Map<Integer,Student> fillMapStudents() throws ConnectionFailException, SQLException, DriverClassNotFoundException{
-    
- 	HashMap<Integer,Student> map = new HashMap<Integer,Student>();
- 	Set<String> setNameStudent = listStudents.keySet();
- 	int row = 0;
-   
- 	for(Iterator<String> i = setNameStudent.iterator(); i.hasNext();){
-       String name = i.next();
-       String firstName = listStudents.get(name);
-       Student student = new Student(name,firstName,request.getCommentFromStudent(name,firstName),listCourses);
-      
-       for(String course : listCourses)
-       {
-           Set<String> mapIntitulates = mapCoursesIntitulates.get(course).keySet();
-           for(Iterator<String> it = mapIntitulates.iterator();it.hasNext();)
-           {
-               String intitulate = it.next();
-               student.setNoteFromCourseAndIntitulate(course,intitulate,request.getStudentNoteFromCourseAndIntitulate(name,firstName,course,intitulate));           
-           }
-       }
-        map.put(row++,student);     
-   }
-    
-     return map;
- }
- */
- 
- 
- /**
-  * Fill a Map which contains an element associate with a number (line number)
-  * @return the map fill in method
-  * @throws ConnectionFailException 
-  * @throws SQLException
-  * @throws DriverClassNotFoundException
   */
  private Map<String,Student> fillMapStudents() throws ConnectionFailException, SQLException, DriverClassNotFoundException{
      HashMap<String,Student> map = new HashMap<String,Student>();

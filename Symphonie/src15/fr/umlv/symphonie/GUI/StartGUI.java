@@ -105,10 +105,13 @@ public class StartGUI {
 	    //JDesktopPane desktop = new JDesktopPane();
 		//frame.add(toolBar,BorderLayout.NORTH);
 				
-				
+	    		
 		try {
 		// cache pour les items
+			
 		final GUICache cache = GUICache.newInstance();
+		
+		
 		Cache databasecache = Cache.newCache();
 		
 		new ViewStudent(databasecache,cache);
@@ -124,6 +127,8 @@ public class StartGUI {
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
 		//menuBar.add(itemFile.getItem());
+		
+		
 		ItemFileExport export = new ItemFileExport(cache);
 		ItemFileImport im = new ItemFileImport(cache);
 		itemFile.getItem().add(new JSeparator());
@@ -155,12 +160,19 @@ public class StartGUI {
 		ItemViewStudent j = new ItemViewStudent(cache);
 		ItemViewTeacher ju = new ItemViewTeacher(cache);
 		
+		
+		
 		ItemFormula formula = new ItemFormula(cache);
 		ItemFormulaAdd fo = new ItemFormulaAdd(cache);
+		
 		ItemFormulaDelete fofd = new ItemFormulaDelete(cache);
+		
+		
 		ItemFormulaEdit fdo = new ItemFormulaEdit(cache);
 		ItemFormulaPlugin foss = new ItemFormulaPlugin(cache);
+		
 		ItemFormulaPluginAdd fossm = new ItemFormulaPluginAdd(cache);
+		
 		ItemFormulaPluginRemove fodss = new ItemFormulaPluginRemove(cache);
 		
 		

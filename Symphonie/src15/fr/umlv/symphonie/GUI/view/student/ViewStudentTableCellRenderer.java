@@ -8,6 +8,7 @@ package fr.umlv.symphonie.GUI.view.student;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 
 
@@ -33,10 +34,11 @@ public class ViewStudentTableCellRenderer implements TableCellRenderer {
 		// TODO Auto-generated method stub
 			if(value!=null){
 				JTextField component = new JTextField(value.toString());
+				component.setPreferredSize(new Dimension(30,30));
 				component.setHorizontalAlignment(JTextField.CENTER);
 				if(column==0 && row%5==0){
 					component.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-					component.setBackground(Color.GRAY);
+					component.setBackground(Color.ORANGE);
 					Font font = new Font("my font",Font.ITALIC|Font.BOLD,15);
 					font.isBold();
 					component.setFont(font);

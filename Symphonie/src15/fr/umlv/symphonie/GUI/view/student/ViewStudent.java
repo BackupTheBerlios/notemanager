@@ -179,7 +179,7 @@ public class ViewStudent {
 	private JTable createTable(Cache cache){
 		ViewStudentTableModel model = new ViewStudentTableModel(cache);		
 		JTable table = new JTable(model,new ViewStudentTableColumnModel(model));		
-		table.setShowGrid(false);	
+		//table.setShowGrid(false);	
 		table.setDefaultRenderer(Object.class,new ViewStudentTableCellRenderer());
 		return table;
 	}		

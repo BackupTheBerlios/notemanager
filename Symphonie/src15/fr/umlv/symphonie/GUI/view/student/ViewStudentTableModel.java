@@ -35,8 +35,7 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * @param cache
 	 */
 	public ViewStudentTableModel(Cache cache){
-		fillField(cache);
-		//fillModel(cache.getMapStudent().get(name));
+		fillField(cache);	
 	}
 	
 	/**
@@ -189,7 +188,7 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * @see javax.swing.table.TableModel#isCellEditable(int, int)
 	 */
 	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
