@@ -43,7 +43,7 @@ public class Cache {
      listCourses = request.getListCourses();   
      mapCoursesIntitulates = fillMapCoursesIntitulates();     
      mapStudents = fillMapStudents();
- }
+  }
  
  /**
   * It's a static method for create an singleton's class
@@ -131,8 +131,9 @@ public class Cache {
                 String intitulate = it.next();
                 student.setNoteFromCourseAndIntitulate(course,intitulate,request.getStudentNoteFromCourseAndIntitulate(name,firstName,course,intitulate));           
             }     		     		     
-     	}     	     
-     }        
+     	}
+        map.put(studentName,student);
+     }   
      return map;     
  }  
  
@@ -142,6 +143,14 @@ public class Cache {
   */
  public List<String> getListCourses(){
      return listCourses;
+ }
+ 
+ /**
+  * Getter for student's arrayList
+  * @return listStudents
+  */
+ public List<String> getListStudents(){
+     return listStudents;
  }
  
  /**

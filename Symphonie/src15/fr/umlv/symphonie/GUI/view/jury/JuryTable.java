@@ -7,7 +7,12 @@ package fr.umlv.symphonie.GUI.view.jury;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
 
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -21,15 +26,20 @@ import fr.umlv.symphonie.GUI.Cache;
  */
 public class JuryTable {
 
+    private JPanel component;
+
     private JTable table;
     private JuryTableModel tableModel;
     
     public JuryTable(Cache cache)
     { 
+      this.component = new JPanel();
+      
+        /*Create the main table*/
         this.table = new JTable();
         this.table.setVisible(true);  
         this.tableModel = new JuryTableModel(cache);     
-        //JuryTableColumnModel juryTableColumnModel = new JuryTableColumnModel(tableModel);
+        JuryTableColumnModel juryTableNotesColumnModel = new JuryTableColumnModel(tableModel);
         this.table.setTableHeader(null);
         this.table.setCellSelectionEnabled(true);
         this.table.setModel(tableModel) ;
@@ -47,7 +57,7 @@ public class JuryTable {
           setVerticalAlignment(SwingConstants.CENTER); 
           table.setGridColor(Color.BLACK);
           
-            if(row<=2)              
+            if(row<2)              
             {               
                 setBackground(Color.LIGHT_GRAY);                         
                 table.setFont(new Font(null,Font.BOLD,14));
@@ -62,13 +72,16 @@ public class JuryTable {
            }
         });
         //this.table.setColumnModel(juryTableColumnModel);      
+    this.component.add(new JScrollPane(table));
     }
     
-   
- 
+public JComponent getTable(){
+    return component;
+}
+ /*
     public JTable getTable()
     {
-        return table; 
+        return tableNotes; 
     }
-    
+  */  
 }
