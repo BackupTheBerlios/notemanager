@@ -43,7 +43,7 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 		}
 		guiCache.getMenuRegistry().get(menuName).getItem().add(item);
 		register();
-		
+		setAction();
 	}	
 	
 	/**
@@ -59,6 +59,7 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 		item = new JMenu(getItemName());
 		guiCache.getMenuBar().add(item);
 		register();
+        setAction();
 	}
 	
 	
