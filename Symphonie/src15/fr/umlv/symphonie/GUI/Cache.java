@@ -86,7 +86,7 @@ public class Cache {
  }
  
  /**
-  * Fill a Map which contains an element associate with a number (line number)
+  * Fill a Map which contains an object Student associate with a number (line number)
   * @return the map fill in method
   * @throws ConnectionFailException 
   * @throws SQLException
