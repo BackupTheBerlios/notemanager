@@ -70,14 +70,10 @@ import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
  */
 public class StartGUI {
 
-    private final JFrame frame;
-    
-    public StartGUI(JFrame frame){
-        this.frame = frame;
-    }
-    
-	private void createAndShowGUI(){
+	private static void createAndShowGUI(){
+		JFrame frame = new JFrame("Symphonie");
 		
+		frame.setSize(1000,860);
 		
 		
 		
@@ -88,7 +84,7 @@ public class StartGUI {
 		// cache pour les items
 		final GUICache cache = GUICache.newInstance();
 		frame.setJMenuBar(cache.getMenuBar());
-		frame.getContentPane().add(cache.getToolBar(),BorderLayout.NORTH);
+		frame.add(cache.getToolBar(),BorderLayout.NORTH);
 		
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
@@ -118,31 +114,31 @@ public class StartGUI {
 		itemEdit.getItem().add(new JSeparator());
 		ItemEditSelect sel = new ItemEditSelect(cache);
 		
-		//add JMenul edit to the menubar
+//		 add JMenul edit to the menubar
 		ItemView itemView = new ItemView(cache);
 		ItemViewJury jury = new ItemViewJury(cache);
 		ItemViewStudent j = new ItemViewStudent(cache);
 		ItemViewTeacher ju = new ItemViewTeacher(cache);
 		
 		ItemFormula formula = new ItemFormula(cache);
-		ItemFormulaAdd formAdd = new ItemFormulaAdd(cache);
-		ItemFormulaDelete formDel = new ItemFormulaDelete(cache);
-		ItemFormulaEdit formEdit = new ItemFormulaEdit(cache);
-		ItemFormulaPlugin formPlug = new ItemFormulaPlugin(cache);
-		ItemFormulaPluginAdd formplugAdd = new ItemFormulaPluginAdd(cache);
-		ItemFormulaPluginRemove formPluginRem = new ItemFormulaPluginRemove(cache);
+		ItemFormulaAdd fo = new ItemFormulaAdd(cache);
+		ItemFormulaDelete fofd = new ItemFormulaDelete(cache);
+		ItemFormulaEdit fdo = new ItemFormulaEdit(cache);
+		ItemFormulaPlugin foss = new ItemFormulaPlugin(cache);
+		ItemFormulaPluginAdd fossm = new ItemFormulaPluginAdd(cache);
+		ItemFormulaPluginRemove fodss = new ItemFormulaPluginRemove(cache);
 		
 		
-		ItemToolAdminMode adminMode = new ItemToolAdminMode(cache);
-		ItemToolFormula formul = new ItemToolFormula(cache);
-		ItemToolPrint print = new ItemToolPrint(cache);
-		ItemToolRedo redo = new ItemToolRedo(cache);
-		ItemToolSave toolSave = new ItemToolSave(cache);
-		ItemToolTools tools = new ItemToolTools(cache);
-		ItemToolUndo undo = new ItemToolUndo(cache);
-		ItemToolViewJury viewJury = new ItemToolViewJury(cache);
-		ItemToolViewStudent viewStudent = new ItemToolViewStudent(cache);
-		ItemToolViewTeacher viewTeacher = new ItemToolViewTeacher(cache);
+		ItemToolAdminMode toooofhjfjhfjh = new ItemToolAdminMode(cache);
+		ItemToolFormula gjkgkj = new ItemToolFormula(cache);
+		ItemToolPrint poig = new ItemToolPrint(cache);
+		ItemToolRedo ghkf = new ItemToolRedo(cache);
+		ItemToolSave gjkg = new ItemToolSave(cache);
+		ItemToolTools jkgjk = new ItemToolTools(cache);
+		ItemToolUndo undojktg = new ItemToolUndo(cache);
+		ItemToolViewJury fsd = new ItemToolViewJury(cache);
+		ItemToolViewStudent fezgza = new ItemToolViewStudent(cache);
+		ItemToolViewTeacher rfzefz = new ItemToolViewTeacher(cache);
 		
 		
 		/*
@@ -175,24 +171,18 @@ public class StartGUI {
 			System.out.println(ioe.getMessage());
 		}
 		finally{
-			
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
 		}
 		
 	}
 	
 	public static void main(String[] args) {
-        JFrame frame = new JFrame("Symphonie");
-        frame.setSize(1000,860);
-        
-        final StartGUI gui = new StartGUI(frame);
-        
-        SwingUtilities.invokeLater(new Runnable(){
+		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
-				gui.createAndShowGUI();
+				createAndShowGUI();
 			}
 		});
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
 		
 		
 	}

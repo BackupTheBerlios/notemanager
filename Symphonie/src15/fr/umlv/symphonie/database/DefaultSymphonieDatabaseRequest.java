@@ -14,7 +14,6 @@ import fr.umlv.symphonie.database.ConnectionFailException;
 import fr.umlv.symphonie.database.DriverClassNotFoundException;
 import fr.umlv.symphonie.database.request.GetCommentFromStudent;
 import fr.umlv.symphonie.database.request.GetListStudentNoteFromCourseAndIntitulate;
-import fr.umlv.symphonie.database.request.GetNumberOfColumn;
 import fr.umlv.symphonie.database.request.InsertStudentNoteFromCourseAndIntitulate;
 import fr.umlv.symphonie.database.request.ListCourses;
 import fr.umlv.symphonie.database.request.ListCoursesIntitulateFromCourse;
@@ -44,11 +43,6 @@ public class DefaultSymphonieDatabaseRequest implements SymphonieDatabaseRequest
 	/***************************************************
 	 *                  BASIC REQUEST                  *
 	 ***************************************************/
-	
-	public int getNumberOfColumn() throws ConnectionFailException,SQLException,DriverClassNotFoundException {
-		return new GetNumberOfColumn().getNumberofColumn();
-	}
-	
 	public Map<String,String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException
 	{		
 			return new ListStudent().getListStudents();		

@@ -31,8 +31,7 @@ public class Cache {
  private final Map<Integer,Student> mapStudents;
  
  private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
-
- private final int numberColumns;
+ 
 
  
  
@@ -49,12 +48,10 @@ public class Cache {
      listCourses = request.getListCourses();   
      mapCoursesIntitulates = fillMapCoursesIntitulates();     
      mapStudents = fillMapStudents();
-     numberColumns = request.getNumberOfColumn();
  }
  
  /**
   * It's a static method for create an singleton's class
-  * @return Cache is object represent the class
  */
  public static Cache newCache() throws SQLException, DriverClassNotFoundException, ConnectionFailException
  {
@@ -86,7 +83,7 @@ public class Cache {
  }
  
  /**
-  * Fill a Map which contains an object Student associate with a number (line number)
+  * Fill a Map which contains an element associate with a number (line number)
   * @return the map fill in method
   * @throws ConnectionFailException 
   * @throws SQLException
@@ -114,14 +111,6 @@ public class Cache {
    }
     
      return map;
- }
- 
- /**
-  * Getter for the numberColumns
-  * @return field numberColumns
-  */ 
- public int getNumberColumns(){
-     return numberColumns;
  }
  
  /**

@@ -22,12 +22,7 @@ import java.util.Map;
 public interface SymphonieDatabaseRequest {
 	
 	/* BASIC Symphonie's request */
-	/**
-	 * @return number of column
-	 */	
-	public int getNumberOfColumn() throws ConnectionFailException,SQLException,DriverClassNotFoundException;
-	
-	
+				
 	/**
 	 * OK
 	 * @return student's list

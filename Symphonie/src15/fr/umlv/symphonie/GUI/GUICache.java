@@ -37,6 +37,7 @@ public class GUICache {
 	private final String defaultLangage = "menu_FR.xml";
 	private static boolean isInstancied = false;
 	private static GUICache instance;
+	
 	/**
 	 * 
 	 * @throws SAXException
