@@ -2,8 +2,6 @@
  * Created on 14 mars 2005
  *
  */
-package fr.umlv.symphonie.GUI;
-
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -24,10 +22,16 @@ public class Cache {
 
  private static boolean isInstance = false;
  private static Cache cache;
- private final List<String> listStudents ;
+ private final Map<String,String> listStudents ;
  private final List<String> listCourses;
+
  
  private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
+ 
+ private final Map<String,String> mapCommentFromStudents;
+ 
+ //getCommentFromStudent(String name,String firstName) throws ConnectionFailException,SQLException,DriverClassNotFoundException;
+    
  
  /**
   * 
@@ -39,7 +43,8 @@ public class Cache {
  {
      listStudents = request.getListStudents();
      listCourses = request.getListCourses();
-     mapCoursesIntitulates = fillMapCoursesIntitulates();     
+     mapCoursesIntitulates = fillMapCoursesIntitulates();    
+     mapCommentFromStudents = fillMapCommentFromStudents();
  }
  
  
@@ -71,6 +76,20 @@ public class Cache {
      }
      return map;          
  }
+ 
+ private Map<String,String> fillMapCommentFromStudents(){
+HashMap<String,String> map = new HashMap<String,String>();
+    for(String s : listCourses){
+    
+    }
+     return map;
+ }
+ 
+ protected Map<String,Map<String,Integer>> getMapCoursesIntitulates()
+ {
+     return mapCoursesIntitulates;
+ }
+ 
 protected List<String> getListCourses(){
     return listCourses;
 }
