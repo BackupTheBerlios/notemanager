@@ -1,14 +1,14 @@
-
 package fr.umlv.symphonie.GUI;
 /*
  * Created on 14 mars 2005
  *
  */
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import fr.umlv.symphonie.database.ConnectionFailException;
 import fr.umlv.symphonie.database.DefaultSymphonieDatabaseRequest;
@@ -28,14 +28,13 @@ public class Cache {
  private final Map<String,String> listStudents ;
  private final List<String> listCourses;
 
+ private final Map<Integer,Student> mapStudents;
  
  private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
  
- private final Map<String,String> mapCommentFromStudents;
- 
- //getCommentFromStudent(String name,String firstName) throws ConnectionFailException,SQLException,DriverClassNotFoundException;
- //public double getStudentNoteFromCourseAndIntitulate(String name, String firstName, String course,String intitulate) throws ConnectionFailException,SQLException,DriverClassNotFoundException;
 
+ 
+ 
  
  /**
   * Create an object with Students' list, Courses' list, Intitulates' courses, students' comment
@@ -46,9 +45,9 @@ public class Cache {
  private Cache() throws SQLException,DriverClassNotFoundException,ConnectionFailException
  {
      listStudents = request.getListStudents();
-     listCourses = request.getListCourses();
-     mapCoursesIntitulates = fillMapCoursesIntitulates();    
-     mapCommentFromStudents = fillMapCommentFromStudents();
+     listCourses = request.getListCourses();   
+     mapCoursesIntitulates = fillMapCoursesIntitulates();     
+     mapStudents = fillMapStudents();
  }
  
  
@@ -81,27 +80,36 @@ public class Cache {
      return map;          
  }
  
- private Map<String,String> fillMapCommentFromStudents(){
-HashMap<String,String> map = new HashMap<String,String>();
-   
-    
+ private Map<Integer,Student> fillMapStudents() throws ConnectionFailException, SQLException, DriverClassNotFoundException{
+     HashMap<Integer,Student> map = new HashMap<Integer,Student>();
+     Set<String> setNameStudent = listStudents.keySet();
+     int row = 0;
+   for(Iterator<String> i = setNameStudent.iterator(); i.hasNext();){
+       String name = i.next();
+       String firstName = listStudents.get(name);
+       Student student = new Student(name,firstName,request.getCommentFromStudent(name,firstName),listCourses);
+      
+       for(String course : listCourses)
+       {
+           Set<String> mapIntitulates = mapCoursesIntitulates.get(course).keySet();
+           for(Iterator<String> it = mapIntitulates.iterator();it.hasNext();)
+           {
+               String intitulate = it.next();
+               student.setNoteFromCourseAndIntitulate(course,intitulate,request.getStudentNoteFromCourseAndIntitulate(name,firstName,course,intitulate));           
+           }
+       }
+        map.put(row++,student);     
+   }
     
      return map;
  }
  
- protected Map<String,Map<String,Integer>> getMapCoursesIntitulates()
- {
-     return mapCoursesIntitulates;
+ public List<String> getListCourses(){
+     return listCourses;
  }
  
-protected List<String> getListCourses(){
-    return listCourses;
-}
-
- 
- protected Map<String,String> getListStudents(){
-    return listStudents;     
+ public Map<Integer,Student> getMapStudent(){
+     return mapStudents;
  }
- 
  
 }
