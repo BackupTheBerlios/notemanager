@@ -13,6 +13,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -75,7 +76,10 @@ import fr.umlv.symphonie.GUI.toolbar.ItemToolUndo;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewJury;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewStudent;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
+import fr.umlv.symphonie.GUI.view.student.ViewStudent;
 import fr.umlv.symphonie.GUI.welcome.GUIWelcome;
+import fr.umlv.symphonie.database.ConnectionFailException;
+import fr.umlv.symphonie.database.DriverClassNotFoundException;
 
 /**
  * @author jraselin
@@ -105,6 +109,11 @@ public class StartGUI {
 		try {
 		// cache pour les items
 		final GUICache cache = GUICache.newInstance();
+		Cache databasecache = Cache.newCache();
+		
+		new ViewStudent(databasecache,cache);
+		
+		
 		frame.setJMenuBar(cache.getMenuBar());
 			
 		Container contentPane = frame.getContentPane();
@@ -185,6 +194,7 @@ public class StartGUI {
 		
 		
 		
+		}
 		/*
 		JButton button = new JButton("changer la langue");
 		button.addActionListener(new ActionListener(){
@@ -204,7 +214,14 @@ public class StartGUI {
 		});
 		frame.add(button);
 		*/
-		
+		catch(SQLException e){
+			System.out.println(e.getMessage());
+		}
+		catch (ConnectionFailException e){
+			System.out.println(e.getMessage());
+		}
+		catch(DriverClassNotFoundException e){
+			System.out.println(e.getMessage());					
 		}
 		catch(SAXException s){
 			System.out.println(s.getMessage());
