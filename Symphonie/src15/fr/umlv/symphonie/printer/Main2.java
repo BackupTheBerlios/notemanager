@@ -1,45 +1,50 @@
 /*
- * Created on 10 mars 2005
+ * Created on 19 mars 2005
  *
  * TODO To change the template for this generated file go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
 package fr.umlv.symphonie.printer;
 
-import java.awt.event.ActionListener;
-import java.io.File;
-import javax.swing.*;
-import java.awt.Container;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /**
  * @author vraharin
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Main {
+public class Main2 {
 
+	public static void addComponentToPrint(Container c, Component comp){
+		c.add(comp,BorderLayout.NORTH);
+	}
+	
 	public static void main(String[] args) {
-		System.out.println("Test ...");
-		ViewTable view_model = new ViewTable(new File("."));
+		
+		PieChartDemo1 camembert = new PieChartDemo1("lol");
+		
+		JFrame frame=new JFrame();
+		JPanel printedPanel = new JPanel();
 		JButton button = new JButton("Print");
 		
-		JTable table=new JTable(view_model);
-		JScrollPane pane=new JScrollPane(table);
-		
-		BarChartDemo1 demo = new BarChartDemo1("Bar Chart Demo");	
-		
-		JFrame frame=new JFrame(); 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container container = frame.getContentPane();
+		printedPanel.add(camembert.getContentPane());
 		
-		container.add(button,BorderLayout.EAST);
-		container.add(demo.getChartChanel(),BorderLayout.WEST);
-		container.add(pane,BorderLayout.CENTER);
+		addComponentToPrint(container,printedPanel);
+		container.add(button,BorderLayout.SOUTH);
 		
-		final SymphoniePrinter sp = new SymphoniePrinter(container);
+		final SymphoniePrinter sp = new SymphoniePrinter(printedPanel);
 		
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -48,6 +53,7 @@ public class Main {
 		});
 		
 		frame.setSize(600,400);
+		frame.pack();
 		frame.setVisible(true);
 	}
 }

@@ -9,6 +9,7 @@ package fr.umlv.symphonie.printer;
 import java.io.File;
 import javax.swing.table.AbstractTableModel;
 import java.util.Date;
+import java.util.HashMap;
 /**
  * @author vraharin
  *
@@ -18,7 +19,7 @@ import java.util.Date;
 public class ViewTable extends AbstractTableModel { 
 	
 		private final File[] files; 
-		private final static String[] columnNames={ "Name","Length","Last modification"};
+		private final static String[] columnNames={ "Name","Length","Last modification","Name","Length","Last modification"};
 				
 		public ViewTable(File directory) { 
 			files=directory.listFiles();
@@ -40,8 +41,11 @@ public class ViewTable extends AbstractTableModel {
 			File file=files[row]; 
 			switch(column) { 
 				case 0: return file.getName(); 
-				case 1:return file.length(); // boxing 
+				case 1: return file.length(); // boxing 
 				case 2: return new Date(file.lastModified()); 
+				case 3: return file.getName(); 
+				case 4: return file.length(); // boxing 
+				case 5: return new Date(file.lastModified()); 
 			} 
 			throw new AssertionError( "invalid column ("+row+','+column+')');
 		}
