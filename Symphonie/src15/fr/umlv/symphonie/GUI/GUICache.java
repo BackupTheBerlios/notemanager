@@ -19,6 +19,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 import fr.umlv.symphonie.GUI.menu.GUIItem;
+import fr.umlv.symphonie.GUI.view.ViewSymphonie;
 
 /**
  * @author jraselin
@@ -32,7 +33,7 @@ public class GUICache {
 	static private final Map<String,GUIItem> menuRegistry = new HashMap<String,GUIItem>();
 	static private final Map<String,GUIItem> toolBarRegistry = new HashMap<String,GUIItem>();
 	static private final Map<String,GUIItem> popupRegistry = new HashMap<String,GUIItem>();
-	static private final Map<String,JComponent> viewMap = new HashMap<String,JComponent>();
+	static private final Map<String,ViewSymphonie> viewMap = new HashMap<String,ViewSymphonie>();
 	
 	static private final JMenuBar menuBar = new JMenuBar(); 
 	static private final JToolBar toolBar = new JToolBar();
@@ -114,7 +115,7 @@ public class GUICache {
 	 * 
 	 * @return
 	 */
-	public Map<String,JComponent> getViewMap(){
+	public Map<String,ViewSymphonie> getViewMap(){
 		return viewMap;
 	}
 	

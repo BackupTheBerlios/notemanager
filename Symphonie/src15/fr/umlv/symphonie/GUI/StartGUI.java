@@ -76,6 +76,7 @@ import fr.umlv.symphonie.GUI.toolbar.ItemToolUndo;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewJury;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewStudent;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
+import fr.umlv.symphonie.GUI.view.jury.ViewJury;
 import fr.umlv.symphonie.GUI.view.student.ViewStudent;
 import fr.umlv.symphonie.GUI.welcome.GUIWelcome;
 import fr.umlv.symphonie.database.ConnectionFailException;
@@ -115,7 +116,7 @@ public class StartGUI {
 		Cache databasecache = Cache.newCache();
 		
 		new ViewStudent(databasecache,cache);
-		
+		new ViewJury(databasecache,cache);
 		
 		frame.setJMenuBar(cache.getMenuBar());
 			

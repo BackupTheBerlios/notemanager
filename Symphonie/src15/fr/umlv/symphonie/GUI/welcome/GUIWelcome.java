@@ -90,7 +90,7 @@ public class GUIWelcome {
 		 					String viewName = e.getDescription();
 		 					System.out.println("====>>>> Selected View =  "+viewName);
 		 					Container c = pane.getParent();
-		 					c.add(GUIWelcome.this.cache.getViewMap().get(viewName));
+		 					c.add(GUIWelcome.this.cache.getViewMap().get(viewName).getComponent());
 		 					
 		 					
 		 					

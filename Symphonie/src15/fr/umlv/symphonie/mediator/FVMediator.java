@@ -70,12 +70,10 @@ public class FVMediator implements FormulaViewMediator {
 	 * @return int which is column's or line's number elts
 	 */
 	public int nbElt(){
-		/*if(isColumn)
+		if(isColumn)
 			return table.getModel().getColumnCount();
 		else
-			return table.getModel().getRowCount();
-	*/
-		return 3;
+			return table.getModel().getRowCount();	
 	}
 	
 	/**
