@@ -116,14 +116,14 @@ public class Main {
 		}
 		catch (ConnectionFailException ce)
 		{
-			System.out.println(ce.getMessage());
+			System.out.println("Connection fail : " + ce.getMessage());
 		}
 		catch (SQLException e) {			
-				System.out.println(e.getMessage());
+				System.out.println("SQLEXception : " + e.getMessage());
 		}	
 		catch (DriverClassNotFoundException de)
 		{
-			System.out.println(de.getMessage());
+			System.out.println("Driver not found : " +  de.getMessage());
 		}
 		
 		
