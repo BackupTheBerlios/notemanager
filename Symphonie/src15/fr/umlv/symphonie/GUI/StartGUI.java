@@ -88,6 +88,11 @@ public class StartGUI {
 		itemEdit.getItem().add(new JSeparator());
 		ItemEditSelect sel = new ItemEditSelect(cache);
 		
+//		 add JMenul edit to the menubar
+		
+		
+		
+		
 		JButton button = new JButton("changer la langue");
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
