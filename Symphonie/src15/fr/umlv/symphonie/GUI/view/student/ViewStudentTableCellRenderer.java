@@ -32,16 +32,18 @@ public class ViewStudentTableCellRenderer implements TableCellRenderer {
 			boolean isSelected, boolean hasFocus, int row, int column) {
 		// TODO Auto-generated method stub
 			if(value!=null){
-				JTextField component = new JTextField(value.toString());			
+				JTextField component = new JTextField(value.toString());
+				component.setHorizontalAlignment(JTextField.CENTER);
 				if(column==0 && row%5==0){
 					component.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 					component.setBackground(Color.GRAY);
-					/*Font font = new Font("my font",Font.ITALIC|Font.BOLD,15);
+					Font font = new Font("my font",Font.ITALIC|Font.BOLD,15);
 					font.isBold();
 					component.setFont(font);
-					*/
+				
+					
 				}
-				else {
+				else {					
 					component.setBorder(BorderFactory.createLineBorder(Color.BLACK));								
 				}
 				return component;

@@ -6,19 +6,14 @@
  */
 package fr.umlv.symphonie.GUI.view.student;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
-import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import fr.umlv.symphonie.GUI.Cache;
 
 /**
  * @author everybody
@@ -27,78 +22,76 @@ import fr.umlv.symphonie.GUI.Cache;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class DialogSelectStudent {
-
-	private final JInternalFrame dialog ;
-	private final JButton submit = new JButton("Submit");
-	private final JButton cancel = new JButton("Cancel");
+	
 	private final JTextField name = new JTextField();
-	private final JTextField firstname = new JTextField();	
+	private final JTextField firstname =new JTextField(); 	
+	private final JOptionPane select;
 	
-	public DialogSelectStudent(JFrame frame){
-		
-		dialog = new JInternalFrame("enter student name ",false,true);
-		
-		JPanel pane = new JPanel(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
-		addButtonCancel(pane,gbc);
-		addButtonSubmit(pane,gbc);
-		addTextFieldFirstName(pane,gbc);
-		addTextFieldName(pane,gbc);
-		
-		dialog.add(pane);
-		dialog.pack();
-		dialog.setVisible(true);
-		frame.add(dialog);
-		//pane.add(new JLabel("Nom :"));
-		//pane.add(new JLabel("PreNom :"));
-		
-		
-	}
-	private void addLabelName(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=1;
-		gbc.gridy=1;
-		gbc.gridwidth = 3;
-		gbc.gridheight = 1;
-		pane.add(new JLabel("Name : "),gbc);		
-	}
-	private void addLabelFirstName(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=1;
-		gbc.gridy=2;
-		gbc.gridwidth = 3;
-		gbc.gridheight = 1;
-		pane.add(new JLabel("Name : "),gbc);
-	}
 	
-	private void addTextFieldName(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=gbc.RELATIVE;
-		gbc.gridy=gbc.RELATIVE;
-		gbc.gridwidth = 5;
-		gbc.gridheight = 1;
-		pane.add(name,gbc);
+	public DialogSelectStudent(){					
+		select = new JOptionPane(createDialogPanel(),JOptionPane.QUESTION_MESSAGE,JOptionPane.OK_CANCEL_OPTION);	
+		select.createDialog(null,"selection").setVisible(true);				
 	}
-	private void addTextFieldFirstName(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=gbc.RELATIVE;
-		gbc.gridy=gbc.RELATIVE;
-		//gbc.gridx=5;
-		//gbc.gridy=2;
-		gbc.gridwidth = 5;
-		gbc.gridheight = 1;
-		pane.add(firstname,gbc);
+	/**
+	 * 
+	 * @return
+	 */
+	public JOptionPane getDialog(){
+		return select;		
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isCancel(){
+		return (Integer)select.getValue()==JOptionPane.CANCEL_OPTION;
+	}
+	public boolean isOK(){
+		return !isCancel();
+	}
+		
+	/**
+	 * 
+	 * @return
+	 */
+	public String getName(){		
+		if(isOK())		
+			return new String(name.getText() + " " + firstname.getText());
+		else return "cancel";			
 	}
 	
-	private void addButtonSubmit(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=1;
-		gbc.gridy=4;
-		gbc.gridwidth = 3;
-		gbc.gridheight = 1;
-		pane.add(submit,gbc);
+	/**
+	 * 
+	 * @return
+	 */
+	private JPanel createDialogPanel(){
+		JPanel dialog = new JPanel(new BorderLayout());
+		dialog.add(createInfoPanel(),BorderLayout.NORTH);
+		dialog.add(createInputPanel(),BorderLayout.SOUTH);		
+		return dialog;
 	}
-	private void addButtonCancel(JPanel pane,GridBagConstraints gbc){
-		gbc.gridx=5;
-		gbc.gridy=4;
-		gbc.gridwidth = 3;
-		gbc.gridheight = 1;
-		pane.add(cancel,gbc);
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private JPanel createInputPanel(){
+		JPanel checkPanel = new JPanel(new GridLayout(2,2));
+		checkPanel.add(new JLabel("name"));
+		checkPanel.add(name);
+		checkPanel.add(new JLabel("firstname"));
+		checkPanel.add(firstname);	
+		return checkPanel;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private JPanel createInfoPanel(){
+		JPanel infoPanel = new JPanel(new BorderLayout());
+		infoPanel.add(new JLabel("Please enter student name and firstname"),BorderLayout.CENTER);
+		return infoPanel;
 	}
 	
 	

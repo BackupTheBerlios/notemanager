@@ -10,15 +10,24 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 
+import fr.umlv.symphonie.GUI.GUICache;
+import fr.umlv.symphonie.GUI.InternalFrameView;
 import fr.umlv.symphonie.printer.SymphoniePrinter;
 
 /**
@@ -30,29 +39,104 @@ import fr.umlv.symphonie.printer.SymphoniePrinter;
 public class GUIWelcome {
 	
 	private final JEditorPane editorPane;
-	private final String fileLangPage; 
+	private String fileLangPage; 
+	private final GUICache cache;
+	private String selectedView;
 	
-	public GUIWelcome(String file){
-		fileLangPage = file;
-		editorPane = new JEditorPane();
+	
+	public GUIWelcome(GUICache cache,String file){
+		this.fileLangPage = file;
+		this.cache = cache;
+		this.editorPane = new JEditorPane();
 		editorPane.setEditable(false);
-		URL welcomePage = GUIWelcome.class.getResource(fileLangPage);
+		
+		File fileTemp = null;
+		URL welcomePage = null;
+		
+		try{
+			fileTemp = new File(fileLangPage);
+			//welcomePage =  new URL("file://"+fileTemp);
+			welcomePage = fileTemp.toURL();
+			
+		}catch(MalformedURLException mfe){
+			mfe.printStackTrace();
+		}
+		
 		if(welcomePage != null){
 			try{
 				editorPane.setPage(welcomePage);
 			}catch(IOException ioe){
 				ioe.printStackTrace();
 			}
-			editorPane.addHyperlinkListener(new HyperActiveSymphonie());
 		}
 		else{
 			System.err.println("File not found "+fileLangPage);
 		}
+		
+		editorPane.addHyperlinkListener(new HyperlinkListener(){
+
+			public void hyperlinkUpdate(HyperlinkEvent e) {
+				if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+		 			JEditorPane pane = (JEditorPane) e.getSource();
+					
+		 			if (e instanceof HTMLFrameHyperlinkEvent) {
+		 				HTMLFrameHyperlinkEvent  evt = (HTMLFrameHyperlinkEvent)e;
+		 				HTMLDocument doc = (HTMLDocument)pane.getDocument();
+		 				doc.processHTMLFrameHyperlinkEvent(evt);
+		 				
+		 			} else {
+		 				try {
+		 					System.out.println("Trying to set page with "+e.getURL());
+		 					String viewName = e.getDescription();
+		 					System.out.println("====>>>> Selected View =  "+viewName);
+		 					Container c = pane.getParent();
+		 					c.add(GUIWelcome.this.cache.getViewMap().get(viewName));
+		 					
+		 					
+		 					
+		 					/* JDesktopPane desk = (JDesktopPane) c.getComponent(0);
+		 					//set the selectedView
+		 					selectedView = viewName;
+		 					InternalFrameView iView = InternalFrameView.newInstance(viewName,GUIWelcome.this.cache.getViewMap().get(viewName));
+		 					desk.add(iView.getInternalFrameView());
+		 					*/
+		 					//pane.setPage(e.getURL());
+		 				} catch (Throwable t) {
+		 					t.printStackTrace();
+		 				}
+		 			}
+		 		}
+				
+			}
+			
+		});
+		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getSelectedView(){
+		return selectedView;
+	}
+	/**
+	 * 
+	 * @param file
+	 */
+	public void setFileLangPage(String file){
+		this.fileLangPage = file;
+	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public JEditorPane getEditorPane(){
+		return editorPane;
+	}
 	
-	public static void main(String[] args) {
+	/* public static void main(String[] args) {
 	
 		JFrame frame=new JFrame();
 		GUIWelcome welc = new GUIWelcome("welcomeFR.html");
@@ -66,5 +150,6 @@ public class GUIWelcome {
 		frame.setVisible(true);
 		
 	}
+	*/
 
 }

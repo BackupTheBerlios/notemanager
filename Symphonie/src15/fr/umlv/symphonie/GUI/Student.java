@@ -6,6 +6,7 @@ package fr.umlv.symphonie.GUI;
 
 import java.util.List;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author jrichert
@@ -55,6 +56,10 @@ public class Student {
     
     public String getFirstName(){
         return firstName;
+    }
+    
+    public Map<String,HashMap<String,Double>> getNotesMap(){
+    	return notesMap;
     }
     
     public String getComment(){

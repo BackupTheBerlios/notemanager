@@ -6,11 +6,14 @@
  */
 package fr.umlv.symphonie.GUI.view.student;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
@@ -34,17 +37,15 @@ public class TestTable {
 		frame.setSize(300,300);
 		
 		try {
-			//GUICache guicache = GUICache.newInstance();
-			//Cache cache = Cache.newCache();
-			Cache cache = null;
-			ViewStudent view = new ViewStudent(cache);					
+			GUICache guicache = GUICache.newInstance();
+			Cache cache = Cache.newCache();			
+			ViewStudent view = new ViewStudent(cache);	
+							
 			Container cont = frame.getContentPane();
-			cont.add(view.getScrollPane());
-			
-			DialogSelectStudent dialog = new DialogSelectStudent(frame);
-					
+			cont.add(view.getComponent());			
 		}
-		/*
+		
+		
 		catch(SAXException s){
 			System.out.println(s.getMessage());
 		}
@@ -62,7 +63,8 @@ public class TestTable {
 		}
 		catch(DriverClassNotFoundException e){
 			System.out.println(e.getMessage());			
-		}*/
+		}
+		
 		finally{
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.pack();

@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 
+import javax.swing.JComponent;
 import javax.swing.JMenuBar;
 import javax.swing.JToolBar;
 import javax.xml.parsers.ParserConfigurationException;
@@ -26,10 +27,12 @@ import fr.umlv.symphonie.GUI.menu.GUIItem;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class GUICache {
+	
 	static private final Map<String,String> mapLangage =new HashMap<String,String>();
 	static private final Map<String,GUIItem> menuRegistry = new HashMap<String,GUIItem>();
 	static private final Map<String,GUIItem> toolBarRegistry = new HashMap<String,GUIItem>();
 	static private final Map<String,GUIItem> popupRegistry = new HashMap<String,GUIItem>();
+	static private final Map<String,JComponent> viewMap = new HashMap<String,JComponent>();
 	
 	static private final JMenuBar menuBar = new JMenuBar(); 
 	static private final JToolBar toolBar = new JToolBar();
@@ -107,11 +110,18 @@ public class GUICache {
 	public JToolBar getToolBar(){
 		return toolBar;
 	}
+	/**
+	 * 
+	 * @return
+	 */
+	public Map<String,JComponent> getViewMap(){
+		return viewMap;
+	}
 	
 	/**
 	 * 
 	 * @throws SAXException
-	 * @throws IOException
+	 * @throws IOExceptioné
 	 * @throws ParserConfigurationException
 	 */
 	public void setLangage(String fileName) throws SAXException,IOException,ParserConfigurationException{

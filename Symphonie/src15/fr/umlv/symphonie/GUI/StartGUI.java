@@ -7,6 +7,9 @@
 package fr.umlv.symphonie.GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -14,11 +17,14 @@ import java.util.Iterator;
 import java.util.Map;
 
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
@@ -47,6 +53,14 @@ import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaEdit;
 import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPlugin;
 import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPluginAdd;
 import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPluginRemove;
+import fr.umlv.symphonie.GUI.menu.tools.AdminDeleteCourse;
+import fr.umlv.symphonie.GUI.menu.tools.AdminInsertCourse;
+import fr.umlv.symphonie.GUI.menu.tools.AdminInsertStudent;
+import fr.umlv.symphonie.GUI.menu.tools.AdmindeleteStudent;
+import fr.umlv.symphonie.GUI.menu.tools.ItemTools;
+import fr.umlv.symphonie.GUI.menu.tools.ItemToolsAdmin;
+import fr.umlv.symphonie.GUI.menu.tools.ItemToolsConnection;
+import fr.umlv.symphonie.GUI.menu.tools.ItemToolsStats;
 import fr.umlv.symphonie.GUI.menu.view.ItemView;
 import fr.umlv.symphonie.GUI.menu.view.ItemViewJury;
 import fr.umlv.symphonie.GUI.menu.view.ItemViewStudent;
@@ -61,6 +75,7 @@ import fr.umlv.symphonie.GUI.toolbar.ItemToolUndo;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewJury;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewStudent;
 import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
+import fr.umlv.symphonie.GUI.welcome.GUIWelcome;
 
 /**
  * @author jraselin
@@ -70,22 +85,33 @@ import fr.umlv.symphonie.GUI.toolbar.ItemToolViewTeacher;
  */
 public class StartGUI {
 
+	
+	
+	
 	private static void createAndShowGUI(){
 		JFrame frame = new JFrame("Symphonie");
 		
 		frame.setSize(1000,860);
+		  
+		int inset = 20;
+	        
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	    frame.setBounds(inset, inset,screenSize.width  - inset*2,screenSize.height - inset*2);
 		
-		
-		
+	    //JDesktopPane desktop = new JDesktopPane();
 		//frame.add(toolBar,BorderLayout.NORTH);
 				
-		
+				
 		try {
 		// cache pour les items
 		final GUICache cache = GUICache.newInstance();
 		frame.setJMenuBar(cache.getMenuBar());
-		frame.add(cache.getToolBar(),BorderLayout.NORTH);
+			
+		Container contentPane = frame.getContentPane();
+				
+		contentPane.add(cache.getToolBar(),BorderLayout.NORTH);
 		
+	
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
 		//menuBar.add(itemFile.getItem());
@@ -139,6 +165,24 @@ public class StartGUI {
 		ItemToolViewJury fsd = new ItemToolViewJury(cache);
 		ItemToolViewStudent fezgza = new ItemToolViewStudent(cache);
 		ItemToolViewTeacher rfzefz = new ItemToolViewTeacher(cache);
+		
+		ItemTools tools = new ItemTools(cache);
+		ItemToolsConnection toolsc = new ItemToolsConnection(cache);
+		ItemToolsStats toolss = new ItemToolsStats(cache);
+		ItemToolsAdmin toolsa = new ItemToolsAdmin(cache);
+		AdminDeleteCourse admdc = new AdminDeleteCourse(cache);
+		AdminInsertCourse adminc =  new AdminInsertCourse(cache);
+		AdminInsertStudent admins = new AdminInsertStudent(cache);
+		AdmindeleteStudent admds = new AdmindeleteStudent(cache);
+		
+				
+		/*************************************************************
+		 * Creation of symphonie welcome page
+		 **************************************************************/
+		
+		GUIWelcome guiWelcome = new GUIWelcome(cache,"welcomeFR.html");
+		contentPane.add(new JScrollPane(guiWelcome.getEditorPane()),BorderLayout.CENTER); 
+		
 		
 		
 		/*
