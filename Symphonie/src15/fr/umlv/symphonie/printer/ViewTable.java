@@ -17,7 +17,11 @@ import java.util.Date;
  */
 public class ViewTable extends AbstractTableModel { 
 	
-		private final File[] files; 
+		/**
+     * Comment for <code>serialVersionUID</code>
+     */
+    private static final long serialVersionUID = 1L;
+        private final File[] files; 
 		private final static String[] columnNames={ "Name","Length","Last modification"};
 				
 		public ViewTable(File directory) { 

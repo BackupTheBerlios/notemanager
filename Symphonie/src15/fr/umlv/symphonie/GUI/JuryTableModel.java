@@ -12,6 +12,11 @@ import javax.swing.table.AbstractTableModel;
  */
 public class JuryTableModel  extends AbstractTableModel {
 
+    /**
+     * Comment for <code>serialVersionUID</code>
+     */
+    private static final long serialVersionUID = 1L;
+
     /* (non-Javadoc)
      * @see javax.swing.table.TableModel#getRowCount()
      */
