@@ -1,0 +1,14 @@
+fr.umlv.symphonie
+fr.umlv.symphonie.GUI
+fr.umlv.symphonie.database
+fr.umlv.symphonie.database.request
+fr.umlv.symphonie.database.request.admin
+fr.umlv.symphonie.formula.expr
+fr.umlv.symphonie.formula.expr.operator
+fr.umlv.symphonie.formula.sablecc.analysis
+fr.umlv.symphonie.formula.sablecc.lexer
+fr.umlv.symphonie.formula.sablecc.node
+fr.umlv.symphonie.formula.sablecc.parser
+fr.umlv.symphonie.mediator
+fr.umlv.symphonie.printer
+fr.umlv.symphonie.viewsymphonie

@@ -1,0 +1,48 @@
+<project name="Symphonie" default="lib" basedir="">
+<description>
+       project build file 
+</description>
+
+ <!-- set global properties for this build -->
+  <property name="src" location="src15"/>
+  <property name="classes" location="classes15"/>
+  <property name="javadoc" location="docs/api" />
+  <property name="lib" location="lib/exec" />
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source " >
+    <!-- Compile the java code from ${src} into ${classes} -->
+    <javac srcdir="${src}" classpath="src15/:lib/org.eclipse.core.runtime_3.1.0:lib/org.eclipse.swt_3.1.0:lib/org.eclipse.swt.gtk_3.1.0/os/linux/x86:lib/org.eclipse.ui_3.1.0:lib/postgresql-8.0.309.jdbc3.jar" destdir="${classes}"/>
+  </target>
+
+  <!-- Generate all java documentations -->
+  <target name="javadoc" depends="compile">
+    <mkdir dir="${javadoc}"/>
+   <!-- <javadoc  sourcepath="${src}" classpath="lib/swt.jar:lib/postgresql-8.0.309.jdbc3.jar" destdir="${javadoc}" packagenames="fr.umlv.symphonie.*"/>-->
+  </target>
+
+<!-- Create jar file -->
+  <target name="lib" depends="javadoc" description="generate the distribution"  >
+    <mkdir dir="${lib}"/>
+    <!-- Create linux distribution -->  
+    <jar jarfile="${lib}/Symphonie.jar" basedir="${classes}" >
+       <manifest>
+	<attribute name="Main-class" value="fr/umlv/symphonie/GUI/Main"/>
+	<attribute name="Class-Path" value="lib/swt.jar:lib/postgresql-8.0.309.jdbc3.jar"/>
+      </manifest>
+    </jar>
+    </target>
+  
+  <target name="clean" description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+     <delete dir="${classes}"/>  
+     <delete dir="${javadoc}"/> 
+     <delete dir="${lib}"/>
+  </target> 
+</project>
