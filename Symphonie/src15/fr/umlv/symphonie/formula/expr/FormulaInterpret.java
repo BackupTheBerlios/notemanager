@@ -44,7 +44,7 @@ public class FormulaInterpret extends AnalysisAdapter {
   {	   
   	node.getExpr().apply(this);
     Expr expr=(Expr)getOut(node.getExpr());
-    Formula.setResult(Evaluate.evaluate(expr));
+    DefaultFormula.setResult(Evaluate.evaluate(expr));
   }
   
   
