@@ -31,19 +31,19 @@ public class TestTable {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Symphonie");
 		
-		frame.setSize(300,250);
+		frame.setSize(300,300);
 		
 		try {
-			GUICache guicache = GUICache.newInstance();
-			Cache cache = Cache.newCache();
-			
+			//GUICache guicache = GUICache.newInstance();
+			//Cache cache = Cache.newCache();
+			Cache cache = null;
 			ViewStudent view = new ViewStudent(cache);					
 			Container cont = frame.getContentPane();
 			cont.add(view.getScrollPane());
 			
 					
 		}
-	
+		/*
 		catch(SAXException s){
 			System.out.println(s.getMessage());
 		}
@@ -52,6 +52,7 @@ public class TestTable {
 		}catch(IOException ioe){
 			System.out.println(ioe.getMessage());
 		}
+		
 		catch(SQLException e){
 			System.out.println(e.getMessage());
 		}
@@ -60,7 +61,7 @@ public class TestTable {
 		}
 		catch(DriverClassNotFoundException e){
 			System.out.println(e.getMessage());			
-		}
+		}*/
 		finally{
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.pack();

@@ -31,7 +31,7 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   ;
  *
- * $Id: TimeSeriesChartDemo1.java,v 1.1 2005/03/22 16:50:31 dalton Exp $
+ * $Id: TimeSeriesChartDemo1.java,v 1.2 2005/03/25 00:51:57 dalton Exp $
  *
  * Changes
  * -------

@@ -31,7 +31,9 @@ public class ViewStudent {
 		ViewStudentTableModel model = new ViewStudentTableModel(cache);
 		
 		table = new JTable(model,new ViewStudentTableColumnModel(model));		
-		table.setShowGrid(false);		
+		table.setShowGrid(false);	
+		table.setDefaultRenderer(Object.class,new ViewStudentTableCellRenderer());
+		table.setRowMargin(0);
 		pane = new JScrollPane(table);							
 	}
 	

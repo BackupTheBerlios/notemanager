@@ -35,7 +35,7 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 */
 	public ViewStudentTableModel(Cache cache){
 		fillField(cache);
-		fillModel(cache.getMapStudent().get("PAPI JOJO"));
+		//fillModel(cache.getMapStudent().get("PAPI JOJO"));
 	//	debug();
 	}
 	
@@ -91,13 +91,38 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 */
 	private static final long serialVersionUID = 1L;	
 	
+	
+	private void fillMapTest(Map<String,Map<String,Integer>> map){
+		// map for intitulate, coeff of JAVA
+		Map<String,Integer> java = new HashMap<String,Integer>();
+		java.put("Exam",6);
+		java.put("Projet",3);
+		java.put("TP",3);
+		// map for intitulate, coeff of C++
+		Map<String,Integer> cplus = new HashMap<String,Integer>();
+		cplus.put("Exam",6);
+		cplus.put("Projet",3);
+		//cplus.put("TP",3);
+		
+		map.put("java",java);
+		map.put("cplus",cplus);
+		
+	}
+	
+	
 	/**
 	 * 
 	 * @param student
-	 */
+	 */	
 	public void fillField(Cache cache){
 		
-		Map<String,Map<String,Integer>> map= cache.getMapCoursesIntitulates();
+		//Map<String,Map<String,Integer>> map= cache.getMapCoursesIntitulates();
+		Map<String,Map<String,Integer>> map = new HashMap<String,Map<String,Integer>>();
+		
+		
+		
+		fillMapTest(map);
+		
 		Iterator<Map.Entry<String,Map<String,Integer>>> it = map.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry<String,Map<String,Integer>> pairs = (Map.Entry<String,Map<String,Integer>>)it.next();
@@ -161,6 +186,11 @@ public class ViewStudentTableModel extends AbstractTableModel{
 		return false;
 	}
 
+	private List<IntitulateCoefficientNote> getListIntitulateCoefficient(int row){		
+		return mapCoursesIntitulates.get(listCourses.get(row/5));		
+	}
+	
+	
 	/* (non-Javadoc)
 	 * @see javax.swing.table.TableModel#getValueAt(int, int)
 	 */
@@ -168,32 +198,35 @@ public class ViewStudentTableModel extends AbstractTableModel{
 		
 		// for course row
 		if(rowIndex%5 ==0  && columnIndex==0){			
-			return listCourses.get(rowIndex/5);
-			
+			return listCourses.get(rowIndex/5);			
 		}		 
 		// for intitulates row
 		else if(rowIndex%5==1 && columnIndex >= 1)
 		{
-			List<IntitulateCoefficientNote> list = mapCoursesIntitulates.get(listCourses.get(rowIndex/5));
-			int size = columnIndex-1;
-			System.out.println(size);
-			//IntitulateCoefficientNote tmp = list.get(columnIndex-1);
-			
-			return null;
-			//return mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getIntitulate();			
+			List<IntitulateCoefficientNote> list = getListIntitulateCoefficient(rowIndex);
+			if(columnIndex-1 <list.size())
+				return list.get(columnIndex-1).getIntitulate();
+			return null;		
 		}
 		// for coefficient row
 		else if(rowIndex%5==2 && columnIndex >= 1)
-		{
-			return null;
-			//return mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getCoefficient();			
+		{		
+			List<IntitulateCoefficientNote> list = getListIntitulateCoefficient(rowIndex);
+			if(columnIndex-1 <list.size())
+				return list.get(columnIndex-1).getCoefficient();
+			return null;							
 		}
 		// for note row
 		else if(rowIndex%5==3 && columnIndex >= 1){
-			//String course=listCourses.get(rowIndex/5);
-			//String intitulate = mapCoursesIntitulates.get(listCourses.get(rowIndex/5)).get(columnIndex).getIntitulate();			
-			//return student.getNoteFromCourseAndIntitulate(course,intitulate);
-			return "0";
+			List<IntitulateCoefficientNote> list = getListIntitulateCoefficient(rowIndex);
+			if(columnIndex-1 <list.size())
+			{
+				String course=listCourses.get(rowIndex/5);
+				String intitulate = list.get(columnIndex-1).getIntitulate();
+				return course + " " + intitulate ;
+				//return student.getNoteFromCourseAndIntitulate(course,intitulate);
+			}
+			return null;
 		}
 		else return null;
 		
