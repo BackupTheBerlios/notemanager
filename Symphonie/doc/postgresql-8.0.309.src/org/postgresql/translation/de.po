@@ -1,0 +1,946 @@
+# translation of de_ab.po to Deutsch
+# translation of de.po to Deutsch
+# German message translation for the PostgreSQL JDBC driver
+# This file is distributed under the same license as the package.
+#
+# $PostgreSQL: pgjdbc/org/postgresql/translation/de.po,v 1.5 2005/01/15 20:24:22 jurka Exp $
+# Andre Bialojahn <ab.spamnews@freenet.de>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-15 12:22-0800\n"
+"PO-Revision-Date: 2005-01-15 20:30+0100\n"
+"Last-Translator: Andre Bialojahn <ab.spamnews@freenet.de>\n"
+"Language-Team: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: org/postgresql/Driver.java.in:171
+msgid "Error loading default settings from driverconfig.properties"
+msgstr "Fehler beim Laden der Voreinstellungen aus driverconfig.properties"
+
+#: org/postgresql/Driver.java.in:209
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1778
+msgid ""
+"Something unusual has occured to cause the driver to fail. Please report "
+"this exception."
+msgstr ""
+"Etwas Ungewöhnliches ist passiert.  Bitte Teilen Sie diesen Fehler mit."
+
+#: org/postgresql/Driver.java.in:530
+msgid "This method is not yet implemented."
+msgstr "Diese Methode ist noch nicht implementiert."
+
+#: org/postgresql/core/ConnectionFactory.java:70
+#, fuzzy, java-format
+msgid "A connection could not be made using the requested protocol {0}."
+msgstr ""
+"Es konnte keine Verbindung unter Verwendung des Protokolls {0} hergestellt "
+"werden."
+
+#: org/postgresql/core/PGStream.java:466
+#, java-format
+msgid "Premature end of input stream, expected {0} bytes, but only read {1}."
+msgstr ""
+"Vorzeitiges Ende des Eingabedatenstroms. Es wurden {0} Bytes erwartet, "
+"jedoch nur {1} gelesen."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:55
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:66
+msgid "The driver does not support SSL."
+msgstr "Der Treiber unterstützt SSL nicht."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:93
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:122
+msgid ""
+"Connection refused. Check that the hostname and port are correct and that "
+"the postmaster is accepting TCP/IP connections."
+msgstr ""
+"Verbindung verweigert. Überprüfen Sie die Korrektheit von Hostnamen und der "
+"Portnummer und dass der Datenbankserver TCP/IP-Verbindungen annimmt."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:108
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:136
+msgid "The connection attempt failed."
+msgstr "Der Verbindungsversuch schlug fehl."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:147
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:159
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:174
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:186
+msgid "The server does not support SSL."
+msgstr "Der Server unterstützt SSL nicht."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:172
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:199
+msgid "An error occured while setting up the SSL connection."
+msgstr "Beim Aufbau der SSL-Verbindung trat ein Fehler auf."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:221
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:275
+#, java-format
+msgid "Connection rejected: {0}."
+msgstr "Verbindung abgewiesen: {0}."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:239
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:262
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:282
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:299
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:325
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:352
+msgid ""
+"The server requested password-based authentication, but no password was "
+"provided."
+msgstr ""
+"Der Server verlangt passwortbasierte Authentifizierung, jedoch wurde kein "
+"Passwort angegeben."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:306
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:375
+#, java-format
+msgid ""
+"The authentication type {0} is not supported. Check that you have configured "
+"the pg_hba.conf file to include the client''s IP address or subnet, and that "
+"it is using an authentication scheme supported by the driver."
+msgstr ""
+"Der Authentifizierungstyp {0} wird nicht unterstützt. Stellen Sie sicher, "
+"dass die Datei 'pg_hba.conf' die IP-Adresse oder das Subnetz  des Clients "
+"beinhaltet und dass der Client ein Authentifizierungsschema nutzt, das vom "
+"Treiber unterstützt wird."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:312
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:350
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:381
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:424
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:470
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:479
+msgid "Protocol error.  Session setup failed."
+msgstr "Protokollfehler.  Die Sitzung konnte nicht gestartet werden."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:340
+#: org/postgresql/core/v3/ConnectionFactoryImpl.java:443
+#, java-format
+msgid "Backend start-up failed: {0}."
+msgstr "Das Backend konnte nicht gestartet werden: {0}."
+
+#: org/postgresql/core/v2/ConnectionFactoryImpl.java:417
+msgid "An unexpected result was returned by a query."
+msgstr "Eine Abfrage lieferte ein unerwartetes Resultat."
+
+#: org/postgresql/core/v2/FastpathParameterList.java:43
+#: org/postgresql/core/v2/FastpathParameterList.java:65
+#: org/postgresql/core/v2/FastpathParameterList.java:72
+#: org/postgresql/core/v2/SimpleParameterList.java:45
+#: org/postgresql/core/v2/SimpleParameterList.java:69
+#: org/postgresql/core/v2/SimpleParameterList.java:76
+#: org/postgresql/core/v2/SimpleParameterList.java:83
+#: org/postgresql/core/v3/CompositeParameterList.java:37
+#: org/postgresql/core/v3/SimpleParameterList.java:38
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2450
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSetMetaData.java:610
+#, java-format
+msgid "The column index is out of range: {0}, number of columns: {1}."
+msgstr ""
+"Der Spaltenindex {0} ist ausserhalb des gültigen Bereichs. Anzahl Spalten: "
+"{1}."
+
+#: org/postgresql/core/v2/FastpathParameterList.java:130
+#: org/postgresql/core/v2/SimpleParameterList.java:142
+#: org/postgresql/core/v3/SimpleParameterList.java:95
+#, java-format
+msgid "No value specified for parameter {0}."
+msgstr "Für den Parameter {0} wurde kein Wert angegeben."
+
+#: org/postgresql/core/v2/QueryExecutorImpl.java:72
+#: org/postgresql/core/v2/QueryExecutorImpl.java:304
+#: org/postgresql/core/v3/QueryExecutorImpl.java:366
+#: org/postgresql/core/v3/QueryExecutorImpl.java:412
+#, java-format
+msgid "Expected command status BEGIN, got {0}."
+msgstr "Statt des erwarteten Befehlsstatus BEGIN, wurde {0} empfangen."
+
+#: org/postgresql/core/v2/QueryExecutorImpl.java:78
+#: org/postgresql/core/v3/QueryExecutorImpl.java:418
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1745
+#, java-format
+msgid "Unexpected command status: {0}."
+msgstr "Unerwarteter Befehlsstatus: {0}."
+
+#: org/postgresql/core/v2/QueryExecutorImpl.java:118
+#: org/postgresql/core/v2/QueryExecutorImpl.java:129
+#: org/postgresql/core/v2/QueryExecutorImpl.java:336
+#: org/postgresql/core/v3/QueryExecutorImpl.java:198
+#: org/postgresql/core/v3/QueryExecutorImpl.java:334
+#: org/postgresql/core/v3/QueryExecutorImpl.java:456
+#: org/postgresql/core/v3/QueryExecutorImpl.java:468
+#: org/postgresql/core/v3/QueryExecutorImpl.java:1305
+msgid "An I/O error occured while sending to the backend."
+msgstr "Eingabe/Ausgabe-Fehler {0} beim Senden an das Backend."
+
+#: org/postgresql/core/v2/QueryExecutorImpl.java:198
+#: org/postgresql/core/v2/QueryExecutorImpl.java:209
+#: org/postgresql/core/v3/QueryExecutorImpl.java:571
+#, java-format
+msgid "Unknown Response Type {0}."
+msgstr "Die Antwort weist einen unbekannten Typ auf: {0}."
+
+#: org/postgresql/core/v2/QueryExecutorImpl.java:538
+#: org/postgresql/core/v3/QueryExecutorImpl.java:1407
+#, java-format
+msgid "Unable to interpret the update count in command completion tag: {0}."
+msgstr ""
+
+#: org/postgresql/core/v2/SimpleParameterList.java:57
+msgid "Zero bytes may not occur in string parameters."
+msgstr "Stringparameter dürfen keine Nullbytes enthalten."
+
+#: org/postgresql/core/v3/QueryExecutorImpl.java:192
+msgid "Unable to bind parameter values for statement."
+msgstr "Der Anweisung konnten keine Parameterwerte zugewiesen werden."
+
+#: org/postgresql/core/v3/QueryExecutorImpl.java:765
+#, java-format
+msgid ""
+"Bind message length {0} too long.  This can be caused by very large or "
+"incorrect length specifications on InputStream parameters."
+msgstr ""
+"Die Nachrichtenlänge {0} ist zu groß. Das kann von sehr großen oder "
+"inkorrekten Längenangaben eines InputStream-Parameters herrühren."
+
+#: org/postgresql/core/v3/QueryExecutorImpl.java:1199
+#, java-format
+msgid ""
+"The server''s client_encoding parameter was changed to {0}. The JDBC driver "
+"requires client_encoding to be UNICODE for correct operation."
+msgstr ""
+"Der Parameter 'client_encoding' wurde auf dem Server auf {0} verändert. Der "
+"JDBC-Treiber setzt für korrektes Funktionieren die Einstellung UNICODE "
+"voraus."
+
+#: org/postgresql/core/v3/QueryExecutorImpl.java:1206
+#, java-format
+msgid ""
+"The server''s DateStyle parameter was changed to {0}. The JDBC driver "
+"requires DateStyle to begin with ISO for correct operation."
+msgstr ""
+"Der Parameter 'Date Style' wurde auf dem Server auf {0} verändert. Der JDBC-"
+"Treiber setzt für korrekte Funktion voraus, daß 'Date Style' mit 'ISO' "
+"beginnt."
+
+#: org/postgresql/core/v3/QueryExecutorImpl.java:1250
+msgid "The driver currently does not support COPY operations."
+msgstr "Der Treiber unterstützt derzeit keine COPY-Operationen."
+
+#: org/postgresql/ds/PGPoolingDataSource.java:410
+msgid "DataSource has been closed."
+msgstr "Die Datenquelle wurde geschlossen."
+
+#: org/postgresql/ds/common/PooledConnectionImpl.java:112
+msgid "This PooledConnection has already been closed."
+msgstr "Diese PooledConnection ist bereits geschlossen worden."
+
+#: org/postgresql/ds/common/PooledConnectionImpl.java:298
+msgid ""
+"Connection has been closed automatically because a new connection was opened "
+"for the same PooledConnection or the PooledConnection has been closed."
+msgstr ""
+"Die Verbindung wurde automatisch geschlossen, da entweder eine neue "
+"Verbindung für die gleiche PooledConnection geöffnet wurde, oder die "
+"PooledConnection geschlossen worden ist.."
+
+#: org/postgresql/ds/common/PooledConnectionImpl.java:298
+msgid "Connection has been closed."
+msgstr "Die Verbindung wurde geschlossen."
+
+#: org/postgresql/ds/common/PooledConnectionImpl.java:456
+#, fuzzy
+msgid "Statement has been closed."
+msgstr "Die Anweisung wurde geschlossen."
+
+#: org/postgresql/fastpath/Fastpath.java:77
+#: org/postgresql/fastpath/Fastpath.java:124
+#, java-format
+msgid "Fastpath call {0} - No result was returned and we expected an integer."
+msgstr ""
+"Der Fastpath-Aufruf {0} gab kein Ergebnis zurück, jedoch wurde ein Integer "
+"erwartet."
+
+#: org/postgresql/fastpath/Fastpath.java:219
+#, java-format
+msgid "The fastpath function {0} is unknown."
+msgstr "Die Fastpath-Funktion {0} ist unbekannt."
+
+#: org/postgresql/geometric/PGbox.java:84
+#: org/postgresql/geometric/PGcircle.java:84
+#: org/postgresql/geometric/PGcircle.java:93
+#: org/postgresql/geometric/PGline.java:82
+#: org/postgresql/geometric/PGlseg.java:79
+#: org/postgresql/geometric/PGpoint.java:85
+#, java-format
+msgid "Conversion to type {0} failed: {1}."
+msgstr "Die Umwandlung in den Typ {0} schlug fehl: {1}."
+
+#: org/postgresql/geometric/PGpath.java:83
+#, java-format
+msgid "Cannot tell if path is open or closed: {0}."
+msgstr ""
+"Es konnte nicht ermittelt werden, ob der Pfad offen oder geschlossen ist: "
+"{0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Array.java:90
+#, java-format
+msgid "The array index is out of range: {0}"
+msgstr "Der Arrayindex ist außerhalb des gültigen Bereichs: {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Array.java:137
+msgid "Multi-dimensional arrays are currently not supported."
+msgstr ""
+
+#: org/postgresql/jdbc2/AbstractJdbc2Array.java:164
+#, java-format
+msgid "The array index is out of range: {0}, number of elements: {1}."
+msgstr ""
+"Der Arrayindex {0} ist außerhalb des gültigen Bereichs. Es gibt {1} Elemente."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:198
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:946
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:990
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:220
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:239
+msgid "No results were returned by the query."
+msgstr "Die Abfrage lieferte kein Ergebnis."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:212
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:263
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:281
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2340
+msgid "A result was returned when none was expected."
+msgstr "Die Anweisung lieferte ein Ergebnis obwohl keines erwartet wurde."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:408
+#, java-format
+msgid "Failed to create object for: {0}."
+msgstr "Erstellung des Objektes schlug fehl für: {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:427
+#, java-format
+msgid "The class {0} does not implement org.postgresql.util.PGobject."
+msgstr "Die Klasse {0} implementiert nicht 'org.postgresql.util.PGobject'."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:468
+#, java-format
+msgid "Unable to load the class {0} responsible for the datatype {1}"
+msgstr ""
+"Die für den Datentyp {1} verantwortliche Klasse {0} konnte nicht geladen "
+"werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:557
+msgid ""
+"Cannot change transaction read-only property in the middle of a transaction."
+msgstr ""
+"Die Nur-Lesen-Eigenschaft einer Transaktion kann nicht während der "
+"Transaktion verändert werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:733
+msgid ""
+"Cannot change transaction isolation level in the middle of a transaction."
+msgstr ""
+"Die Transaktions-Trennungsstufe kann nicht während einer Transaktion "
+"verändert werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:738
+#, java-format
+msgid "Transaction isolation level {0} not supported."
+msgstr "Die Transaktions-Trennungsstufe {0} ist nicht unterstützt."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Connection.java:902
+msgid "Unable to translate data into the desired encoding."
+msgstr "Die Daten konnten nicht in die gewünschte Kodierung gewandelt werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2DatabaseMetaData.java:61
+msgid "Unable to find datatypes oid and oidvector in the system catalogs."
+msgstr ""
+"In den Systemkatalogen konnten die Datentypen 'oid' und oidvector' nicht "
+"gefunden werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2DatabaseMetaData.java:84
+msgid "Unable to find name datatype in the system catalogs."
+msgstr ""
+"In den Systemkatalogen konnte der Namensdatentyp nicht gefunden werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:179
+msgid ""
+"Operation requires a scrollable ResultSet, but this ResultSet is "
+"FORWARD_ONLY."
+msgstr ""
+"Die Operation erfordert ein scrollbares ResultSet, dieses jedoch ist "
+"FORWARD_ONLY."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:354
+msgid "Unexpected error while decoding character data from a large object."
+msgstr ""
+"Ein unerwarteter Fehler trat beim Dekodieren von Zeichen aus einem "
+"LargeObject (LOB) auf."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:618
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:644
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1809
+msgid "Can''t use relative move methods while on the insert row."
+msgstr ""
+"Relative Bewegungen können in der Einfügezeile nicht durchgeführt werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:664
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2487
+#, fuzzy, java-format
+msgid "Invalid fetch direction constant: {0}."
+msgstr "Unzulässige Richtungskonstante bei fetch: {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:678
+msgid "Cannot call cancelRowUpdates() when on the insert row."
+msgstr "'cancelRowUpdates()' kann in der Einfügezeile nicht aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:698
+msgid "Cannot call deleteRow() when on the insert row."
+msgstr "'deleteRow()' kann in der Einfügezeile nicht aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:704
+msgid ""
+"Currently positioned before the start of the ResultSet.  You cannot call "
+"deleteRow() here."
+msgstr ""
+"Die augenblickliche Position ist vor dem Beginn des ResultSets.  Dort kann "
+"'deleteRow()' nicht aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:709
+msgid ""
+"Currently positioned after the end of the ResultSet.  You cannot call "
+"deleteRow() here."
+msgstr ""
+"Die augenblickliche Position ist hinter dem Ende des ResultSets.  Dort kann "
+"'deleteRow()' nicht aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:714
+msgid "There are no rows in this ResultSet."
+msgstr "Es gibt keine Zeilen in diesem ResultSet."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:762
+msgid "Not on the insert row."
+msgstr "Nicht in der Einfügezeile."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:766
+msgid "You must specify at least one column value to insert a row."
+msgstr ""
+"Sie müssen mindestens einen Spaltenwert angeben, um eine Zeile einzufügen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:956
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2111
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2142
+#, java-format
+msgid "The JVM claims not to support the encoding: {0}"
+msgstr "Die JVM behauptet, die Zeichenkodierung {0} nicht zu unterstützen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:960
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1003
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1294
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1423
+msgid "Provided InputStream failed."
+msgstr "Der bereitgestellte InputStream scheiterte."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1075
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2623
+msgid "Provided Reader failed."
+msgstr "Der bereitgestellte Reader scheiterte."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1152
+msgid "Can''t refresh the insert row."
+msgstr "Die EInfügezeile kann nicht aufgefrischt werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1224
+msgid "Cannot call updateRow() when on the insert row."
+msgstr "'updateRow()' kann in der Einfügezeile nicht aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1230
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2669
+msgid ""
+"Cannot update the ResultSet because it is either before the start or after "
+"the end of the results."
+msgstr ""
+"Das ResultSet kann nicht aktualisiert werden, da es entweder vor oder nach "
+"dem Ende der Erebnisse ist."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1586
+#, java-format
+msgid "No primary key found for table {0}."
+msgstr "Für die Tebelle {0} konnte kein Primärschlüssel gefunden werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1793
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2496
+#, fuzzy
+msgid "Fetch size must be a value greater to or equal to 0."
+msgstr "Die Abhol-Größe muß ein Wert größer oder gleich Null sein."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1887
+#, fuzzy
+msgid ""
+"Invalid character data was found.  This is most likely caused by stored data "
+"containing characters that are invalid for the character set the database "
+"was created in.  The most common example of this is storing 8bit data in a "
+"SQL_ASCII database."
+msgstr ""
+"Ungültige Daten vom Typ 'Zeichen'. Das ist höchstwahrscheinlich von in der "
+"Datenbank gespeicherten Zeichen hervorgerufen, die in einer anderen "
+"Kodierung vorliegen, als die, in der die Datenbank erstellt wurde. Das "
+"häufigste Beispiel dafür ist es, 8Bit-Daten in SQL_ASCII-Datanbanken "
+"abzulegen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1926
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1933
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1966
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:1974
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2500
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2508
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2538
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2545
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2565
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2576
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2594
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2612
+#: org/postgresql/jdbc2/TimestampUtils.java:162
+#, java-format
+msgid "Bad value for type {0} : {1}"
+msgstr "Unzulässiger Wert für den Typ {0} : {1}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2364
+#, java-format
+msgid "The column name {0} was not found in this ResultSet."
+msgstr "Der Spaltenname {0} wurde in diesem ResultSet nicht gefunden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2428
+msgid ""
+"ResultSet is not updateable.  The query that generated this result set must "
+"select only one table, and must select all primary keys from that table. See "
+"the JDBC 2.1 API Specification, section 5.6 for more details."
+msgstr ""
+"Das ResultSet kann nicht aktualisiert werden.  Die Abfrage, die es erzeugte, "
+"darf nur eine Tabelle und muss darin alle Primärschlüssel auswählen. Siehe "
+"JDBC 2.1 API-Spezifikation, Abschnitt 5.6 für mehr Details."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2440
+msgid "This ResultSet is closed."
+msgstr "Dieses ResultSet ist geschlossen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2ResultSet.java:2447
+msgid "ResultSet not positioned properly, perhaps you need to call next."
+msgstr ""
+"Das ResultSet ist nicht richtig positioniert. Eventuell muß 'next' "
+"aufgerufen werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:216
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:259
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:301
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2299
+msgid ""
+"Can''t use query methods that take a query string on a PreparedStatement."
+msgstr ""
+"Abfragemethoden, die einen Abfragestring annehmen, können nicht auf ein "
+"PreparedStatement angewandt werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:223
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:242
+msgid "Multiple ResultSets were returned by the query."
+msgstr "Die Abfrage ergab mehrere ResultSets."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:326
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2259
+msgid ""
+"A CallableStatement was declared, but no call to registerOutParameter(1, "
+"<some type>) was made."
+msgstr ""
+"Ein CallableStatement wurde deklariert, aber kein Aufruf von "
+"'registerOutParameter(1, <some type>)' erfolgte."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:334
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:338
+msgid "A CallableStatement was executed with nothing returned."
+msgstr "Ein CallableStatement wurde ausgeführt ohne etwas zurückzugeben."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:343
+#, java-format
+msgid ""
+"A CallableStatement function was executed and the return was of type {0} "
+"however type {1} was registered."
+msgstr ""
+"Eine CallableStatement-Funktion wurde ausgeführt und der Rückgabewert war "
+"vom Typ {0}. Jedoch wurde der Typ {1} dafür registriert."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:493
+msgid "Maximum number of rows must be a value grater than or equal to 0."
+msgstr "Die maximale Zeilenzahl muß ein Wert größer oder gleich Null sein."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:535
+msgid "Query timeout must be a value greater than or equals to 0."
+msgstr "Das Abfragetimeout muß ein Wert größer oder gleich Null sein."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:598
+msgid "The maximum field size must be a value greater than or equal to 0."
+msgstr "Die maximale Feldgröße muss ein Wert größer oder gleich Null sein."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:985
+msgid ""
+"setNull(i,Types.OTHER) is not supported; use setObject(i,nullobject,Types."
+"OTHER) instead."
+msgstr ""
+"'setNull(i, Types.OTHER)' wird nicht unterstützt; benutzen Sie stattdessen "
+"'setObject(i, nullobject, Types.OTHER)'."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:988
+msgid "Unknown Types value."
+msgstr "Unbekannter Typ."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1259
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1384
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2594
+#, java-format
+msgid "Invalid stream length {0}."
+msgstr "Ungültige Länge des Datenstroms: {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1290
+#, java-format
+msgid "The JVM claims not to support the {0} encoding."
+msgstr "Die JVM behauptet, die Zeichenkodierung {0} nicht zu unterstützen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1465
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2541
+#, java-format
+msgid "Unknown type {0}."
+msgstr "Unbekannter Typ {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1591
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1603
+#, java-format
+msgid "Cannot cast an instance of {0} to type {1}"
+msgstr "Die Typwandlung für eine Instanz von {0} nach {1} ist nicht möglich."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1606
+#, java-format
+msgid "Unsupported Types value: {0}"
+msgstr "Unbekannter Typ: {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1624
+msgid ""
+"setObject(i,null) is not supported. Instead, use setNull(i,type) or setObject"
+"(i,null,type)"
+msgstr ""
+"'setObejct(i, null)' ist nicht unterstützt. Benutzen Sie 'setNull(i, type)' "
+"oder 'setObject(i, null, type)' stattdessen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1656
+#, java-format
+msgid ""
+"Can''t infer the SQL type to use for an instance of {0}. Use setObject() "
+"with an explicit Types value to specify the type to use."
+msgstr ""
+"Der in SQL für eine Instanz von {0} zu verwendende Datentyp kann nicht "
+"abgeleitet werden. Benutzen Sie 'setObject()' mit einem expliziten Typ, um "
+"ihn festzulegen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1681
+msgid ""
+"This statement does not declare an OUT parameter.  Use '{' ?= call ... '}' "
+"to declare one."
+msgstr ""
+"Diese Anweisung deklariert keinen OUT-Parameter. Benutzen Sie '{' ?= "
+"call ... '}' um das zu tun."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:1985
+msgid ""
+"Cannot call setXXX(1, ..) on a CallableStatement.  This is an output that "
+"must be configured with registerOutParameter instead."
+msgstr ""
+"'setXXX(1, ..)' kann auf einem CallableStatement nicht aufgerufen werden. "
+"Diese Ausgabe muss stattdessen mit 'registerOutParameter' konfiguriert "
+"werden."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2210
+#, fuzzy, java-format
+msgid "Malformed function or procedure escape syntax at offset {0}."
+msgstr ""
+"Unzulässige Syntax für ein Funktions- oder Prozedur-Escape beim Offset {0}."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2231
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2245
+#, java-format
+msgid ""
+"Parameter of type {0} was registered, but call to get{1} (sqltype={2}) was "
+"made."
+msgstr ""
+"Ein Parameter des Typs {0} wurde registriert, jedoch erfolgte ein Aufruf get"
+"{1} (sqltype={2})."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2261
+msgid "PostgreSQL only supports a single OUT function return value at index 1."
+msgstr ""
+"PostgreSQL unterstützt auf dem Index 1 nur einen einzigen Rückgabewert für "
+"die OUT-Funktion."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2288
+msgid "This statement has been closed."
+msgstr "Die Anweisung wurde geschlossen."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2347
+msgid "Too many update results were returned."
+msgstr "Zu viele Updateergebnisse wurden zurückgegeben."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2376
+#, java-format
+msgid ""
+"Batch entry {0} {1} was aborted.  Call getNextException to see the cause."
+msgstr ""
+"Batch-Eintrag {0} {1} wurde abgebrochen.  Rufen Sie 'getNextException' auf, "
+"um die Ursache zu erfahren."
+
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2574
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2653
+#: org/postgresql/jdbc2/AbstractJdbc2Statement.java:2686
+msgid "Unexpected error writing large object to database."
+msgstr ""
+"Beim Schreiben eines LargeObjects (LOB) in die Datenbank trat ein "
+"unerwarteter Fehler auf."
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:127
+#: org/postgresql/jdbc2/EscapedFunctions.java:139
+#: org/postgresql/jdbc2/EscapedFunctions.java:151
+#: org/postgresql/jdbc2/EscapedFunctions.java:200
+#: org/postgresql/jdbc2/EscapedFunctions.java:237
+#: org/postgresql/jdbc2/EscapedFunctions.java:261
+#: org/postgresql/jdbc2/EscapedFunctions.java:286
+#: org/postgresql/jdbc2/EscapedFunctions.java:310
+#: org/postgresql/jdbc2/EscapedFunctions.java:322
+#: org/postgresql/jdbc2/EscapedFunctions.java:346
+#: org/postgresql/jdbc2/EscapedFunctions.java:387
+#: org/postgresql/jdbc2/EscapedFunctions.java:396
+#: org/postgresql/jdbc2/EscapedFunctions.java:405
+#: org/postgresql/jdbc2/EscapedFunctions.java:414
+#: org/postgresql/jdbc2/EscapedFunctions.java:423
+#: org/postgresql/jdbc2/EscapedFunctions.java:432
+#: org/postgresql/jdbc2/EscapedFunctions.java:441
+#: org/postgresql/jdbc2/EscapedFunctions.java:450
+#: org/postgresql/jdbc2/EscapedFunctions.java:459
+#: org/postgresql/jdbc2/EscapedFunctions.java:468
+#: org/postgresql/jdbc2/EscapedFunctions.java:477
+#: org/postgresql/jdbc2/EscapedFunctions.java:486
+#, java-format
+msgid "{0} function takes one and only one argument."
+msgstr "Die {0}-Funktion erwartet nur genau ein Argument,"
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:163
+#: org/postgresql/jdbc2/EscapedFunctions.java:187
+#: org/postgresql/jdbc2/EscapedFunctions.java:249
+#: org/postgresql/jdbc2/EscapedFunctions.java:298
+#: org/postgresql/jdbc2/EscapedFunctions.java:358
+#: org/postgresql/jdbc2/EscapedFunctions.java:504
+#, java-format
+msgid "{0} function takes two and only two arguments."
+msgstr "Die {0}-Funktion erwartet genau zwei Argumente."
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:177
+msgid "rand function only takes zero or one argument(the seed)."
+msgstr ""
+"Die Funktion 'rand' erwartet kein oder genau ein Argument (den 'seed')."
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:224
+#, java-format
+msgid "{0} function takes four and only four argument."
+msgstr "Die {0}-Funktion erwartet genau vier Argumente."
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:276
+#: org/postgresql/jdbc2/EscapedFunctions.java:336
+#, java-format
+msgid "{0} function takes two or three arguments."
+msgstr "Die {0}-Funktion erwartet zwei oder drei Argumente."
+
+#: org/postgresql/jdbc2/EscapedFunctions.java:369
+#: org/postgresql/jdbc2/EscapedFunctions.java:378
+#: org/postgresql/jdbc2/EscapedFunctions.java:495
+#: org/postgresql/jdbc2/EscapedFunctions.java:513
+#, java-format
+msgid "{0} function doesn't take any argument."
+msgstr "Die {0}-Funktion akzeptiert keine Argumente."
+
+#: org/postgresql/jdbc2/TimestampUtils.java:40
+#, fuzzy
+msgid ""
+"Infinite value found for timestamp.  Java has no corresponding "
+"representation."
+msgstr ""
+"Für den Zeitstempel wurde der Wert 'unendlich' angefunden. Java kann dies "
+"nicht repräsentieren."
+
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:59
+#, fuzzy, java-format
+msgid "Unknown ResultSet holdability setting: {0}."
+msgstr "Unbekannte Einstellung für die Haltbarkeit(?) des ResultSets: {0}."
+
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:95
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:126
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:160
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:181
+msgid "Server versions prior to 8.0 do not support savepoints."
+msgstr "Der Server unterstützt keine Rettungspunkte vor Version 8."
+
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:97
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:128
+msgid "Cannot establish a savepoint in auto-commit mode."
+msgstr "Ein Rettungspunkt kann im Modus 'auto-commit' nicht erstellt werden."
+
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:352
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:400
+#: org/postgresql/jdbc3/AbstractJdbc3Connection.java:448
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:138
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:164
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:189
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:233
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:276
+#: org/postgresql/jdbc3/AbstractJdbc3Statement.java:320
+msgid "Returning autogenerated keys is not supported."
+msgstr "Die Rückgabe automatisch generierter Schlüssel wird nicht unterstützt,"
+
+#: org/postgresql/jdbc3/PSQLSavepoint.java:39
+#: org/postgresql/jdbc3/PSQLSavepoint.java:51
+#: org/postgresql/jdbc3/PSQLSavepoint.java:67
+msgid "Cannot reference a savepoint after it has been released."
+msgstr ""
+"Ein Rettungspunkt kann nicht angesprochen werden, nach dem er entfernt wurde."
+
+#: org/postgresql/jdbc3/PSQLSavepoint.java:43
+msgid "Cannot retrieve the id of a named savepoint."
+msgstr "Die ID eines benamten Rettungspunktes kann nicht ermittelt werden,"
+
+#: org/postgresql/jdbc3/PSQLSavepoint.java:55
+msgid "Cannot retrieve the name of an unnamed savepoint."
+msgstr "Der Name eines namenlosen Rettungpunktes kann nicht ermittelt werden."
+
+#: org/postgresql/largeobject/LargeObjectManager.java:140
+msgid "Failed to initialize LargeObject API"
+msgstr "Die LargeObject-API konnte nicht initialisiert werden."
+
+#: org/postgresql/largeobject/LargeObjectManager.java:172
+#: org/postgresql/largeobject/LargeObjectManager.java:200
+msgid "Large Objects may not be used in auto-commit mode."
+msgstr ""
+"LargeObjects (LOB) dürfen im Modus 'auto-commit' nicht verwendet werden."
+
+#: org/postgresql/ssl/MakeSSL.java:61
+#, fuzzy, java-format
+msgid "The SSLSocketFactory class provided {0} could not be instantiated."
+msgstr ""
+"Die (von?) {0} bereitgestellte SSLSocketFactory-Klasse konnte nicht "
+"instanziiert werden."
+
+#: org/postgresql/util/PGmoney.java:75
+msgid "Conversion of money failed."
+msgstr "Die Umwandlung eines Währungsbetrags schlug fehl."
+
+#: org/postgresql/util/PSQLException.java.in:45
+#, java-format
+msgid "Exception: {0}"
+msgstr "Exception: {0}."
+
+#: org/postgresql/util/PSQLException.java.in:46
+msgid "Stack Trace:"
+msgstr "Stack-Trace:"
+
+#: org/postgresql/util/PSQLException.java.in:48
+msgid "End of Stack Trace"
+msgstr "Ende des Stack-Traces."
+
+#: org/postgresql/util/PSQLException.java.in:56
+#, java-format
+msgid "Exception generating stacktrace for: {0} encountered: {1}"
+msgstr ""
+
+#: org/postgresql/util/ServerErrorMessage.java:88
+#, java-format
+msgid "Detail: {0}"
+msgstr "Detail: {0}"
+
+#: org/postgresql/util/ServerErrorMessage.java:91
+#, java-format
+msgid "Hint: {0}"
+msgstr "Hinweis: {0}"
+
+#: org/postgresql/util/ServerErrorMessage.java:94
+#, java-format
+msgid "Position: {0}"
+msgstr "Position: {0}"
+
+#: org/postgresql/util/ServerErrorMessage.java:97
+#, fuzzy, java-format
+msgid "Where: {0}"
+msgstr "Wo genau: {0}"
+
+#: org/postgresql/util/ServerErrorMessage.java:105
+#, java-format
+msgid "Location: File: {0}, Routine: {1}, Line: {2}"
+msgstr "Ort: Datei: {0}, Routine: {1}, Zeile: {2}."
+
+#: org/postgresql/util/ServerErrorMessage.java:108
+#, java-format
+msgid "Server SQLState: {0}"
+msgstr "Server SQLState: {0}"
+
+#, fuzzy
+#~ msgid "Conversion of box failed: {0}."
+#~ msgstr "Konnte »{0}« nicht in Typ »box« umwandeln"
+
+#, fuzzy
+#~ msgid "Conversion of circle failed: {0}."
+#~ msgstr "Konnte »{0}« nicht in Typ »circle« umwandeln"
+
+#, fuzzy
+#~ msgid "Conversion of line failed: {0}."
+#~ msgstr "Konnte »{0}« nicht in Typ »line« umwandeln"
+
+#, fuzzy
+#~ msgid "Conversion of point failed: {0}."
+#~ msgstr "Konnte »{0}« nicht in Typ »point« umwandeln"
+
+#, fuzzy
+#~ msgid "No results where returned by the query."
+#~ msgstr "Die Abfrage ergab kein Ergebnis."
+
+#, fuzzy
+#~ msgid "Bad byte: {0}"
+#~ msgstr "Ungültiges Format für Byte: {0}"
+
+#, fuzzy
+#~ msgid "Bad short: {0}"
+#~ msgstr "Ungültiges Format für Short: {0}"
+
+#, fuzzy
+#~ msgid "Bad int: {0}"
+#~ msgstr "Ungültiges Format für Long: {0}"
+
+#, fuzzy
+#~ msgid "Bad long: {0}"
+#~ msgstr "Ungültiges Format für Long: {0}"
+
+#, fuzzy
+#~ msgid "Bad BigDecimal: {0}"
+#~ msgstr "Ungültiges Format für BigDecimal: {0}"
+
+#, fuzzy
+#~ msgid "Bad float: {0}"
+#~ msgstr "Ungültiges Format für Float: {0}"
+
+#, fuzzy
+#~ msgid "Bad double: {0}"
+#~ msgstr "Ungültiges Format für Double: {0}"
+
+#, fuzzy
+#~ msgid "Bad date: {0}"
+#~ msgstr "Ungültiges Format für Byte: {0}"
