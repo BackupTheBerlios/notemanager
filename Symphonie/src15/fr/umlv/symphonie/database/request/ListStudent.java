@@ -10,13 +10,11 @@ package fr.umlv.symphonie.database.request;
 import fr.umlv.symphonie.database.AbstractRequest;
 import fr.umlv.symphonie.database.ConnectionFailException;
 import fr.umlv.symphonie.database.DriverClassNotFoundException;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 /**
  * @author jraselin
  *

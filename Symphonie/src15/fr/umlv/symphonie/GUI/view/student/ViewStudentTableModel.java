@@ -8,6 +8,7 @@ package fr.umlv.symphonie.GUI.view.student;
  
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.table.AbstractTableModel;
 import fr.umlv.symphonie.GUI.Cache;
@@ -21,32 +22,40 @@ import fr.umlv.symphonie.GUI.Student;
  */
 public class ViewStudentTableModel extends AbstractTableModel{
 	
-	private final List<String> listIntitulates = new ArrayList<String>();
-	private final List<Integer> listCoeff = new ArrayList<Integer>();
-	private final List<Integer> listNote = new ArrayList<Integer>();
 	
-		
-	/**
-	 * Comment for <code>serialVersionUID</code>
-	 */
-	private static final long serialVersionUID = 1L;
+	
+	private final List<String> listCourses = new ArrayList<String>();
+	private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
 	/**
 	 * 
 	 * @param cache
 	 */
 	public ViewStudentTableModel(Cache cache){
-		
+		this.mapCoursesIntitulates = cache.getMapCoursesIntitulates();
 	}
+	
+	
+		
+	/**
+	 * Comment for <code>serialVersionUID</code>
+	 */
+	private static final long serialVersionUID = 1L;	
 	
 	/**
 	 * 
 	 * @param student
 	 */
-	public void fillModel(Student student){
+	public void fillModel(Cache cache){
+		
+		
+		
+	}
 	
+	private int getMaxIntitulate(){
+		int max=0;
 		
 		
-		
+		return max;
 	}
 	
 	
@@ -54,8 +63,7 @@ public class ViewStudentTableModel extends AbstractTableModel{
 	 * @see javax.swing.table.TableModel#getRowCount()
 	 */
 	public int getRowCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return listCourses.size()*5;
 	}
 
 	/* (non-Javadoc)
