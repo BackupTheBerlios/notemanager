@@ -88,7 +88,7 @@ public class StartGUI {
 		// cache pour les items
 		final GUICache cache = GUICache.newInstance();
 		frame.setJMenuBar(cache.getMenuBar());
-		frame.add(cache.getToolBar(),BorderLayout.NORTH);
+		frame.getContentPane().add(cache.getToolBar(),BorderLayout.NORTH);
 		
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
