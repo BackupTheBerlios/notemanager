@@ -6,17 +6,22 @@
  */
 package fr.umlv.symphonie.GUI.menu;
 
+import javax.swing.AbstractButton;
+import javax.swing.JComponent;
+
 /**
  * @author everybody
  *
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public interface MenuItem {
+public interface GUIItem {
 
 	public void register();
 	
 	public void setText();
+	
+	public AbstractButton getItem();
 	
 	public void setAction();
 }

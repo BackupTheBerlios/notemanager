@@ -6,10 +6,13 @@
  */
 package fr.umlv.symphonie.GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -56,17 +59,17 @@ public class StartGUI {
 		frame.setJMenuBar(menuBar);
 		try {
 		// cache pour les items
-			GUICache cache = GUICache.newInstance();
+		final GUICache cache = GUICache.newInstance();
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
-		menuBar.add(itemFile.getJMenu());
+		menuBar.add(itemFile.getItem());
 		ItemFileExport export = new ItemFileExport(cache);
 		ItemFileImport im = new ItemFileImport(cache);
-		itemFile.getJMenu().add(new JSeparator());
+		itemFile.getItem().add(new JSeparator());
 		ItemFileSave save = new ItemFileSave(cache);
-		itemFile.getJMenu().add(new JSeparator());
+		itemFile.getItem().add(new JSeparator());
 		ItemFilePrint pr = new ItemFilePrint(cache);
-		itemFile.getJMenu().add(new JSeparator());
+		itemFile.getItem().add(new JSeparator());
 		ItemFileExit exit = new ItemFileExit(cache);
 		
 		
@@ -74,19 +77,37 @@ public class StartGUI {
 		// add JMenul edit to the menubar
 		ItemEdit itemEdit =new ItemEdit(cache); 
 		
-		menuBar.add(itemEdit.getJMenu());
+		menuBar.add(itemEdit.getItem());
 		ItemEditUndo und = new ItemEditUndo(cache);
 		ItemEditRedo re = new ItemEditRedo(cache);
-		itemEdit.getJMenu().add(new JSeparator());
+		itemEdit.getItem().add(new JSeparator());
 		ItemEditCut c = new ItemEditCut(cache);					
 		ItemEditPaste p = new ItemEditPaste(cache);
-		itemEdit.getJMenu().add(new JSeparator());
+		itemEdit.getItem().add(new JSeparator());
 		ItemEditDelete d = new ItemEditDelete(cache);
-		itemEdit.getJMenu().add(new JSeparator());
+		itemEdit.getItem().add(new JSeparator());
 		ItemEditSelect sel = new ItemEditSelect(cache);
 		
-		
-		
+		JButton button = new JButton("changer la langue");
+		button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				try{
+					System.out.println("changemt langue");
+				cache.setLangage("menu_EN.xml");
+				System.out.println("changemt langue termine");
+				
+				}
+				catch(SAXException s){
+					System.out.println(s.getMessage());
+				}
+				catch (ParserConfigurationException pce){
+					System.out.println(pce.getMessage());
+				}catch(IOException ioe){
+					System.out.println(ioe.getMessage());
+				}				
+			}
+		});
+		frame.add(button);
 		}
 		catch(SAXException s){
 			System.out.println(s.getMessage());

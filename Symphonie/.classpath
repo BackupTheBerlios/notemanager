@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src15"/>
 	<classpathentry kind="src" path="test15"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/postgresql-8.0.309.jdbc3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/postgresql-8.0.309.jdbc3.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="classes15"/>
 </classpath>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<menuBar>
+<file>File</file>
+<fileSave>Save</fileSave>
+<fileExit>Exit</fileExit>
+<fileExport>Export</fileExport>
+<filePrint>Print</filePrint>
+<fileImport>Import</fileImport>
+
+<edit>Edit</edit>
+<editUndo>Undo/Cancel</editUndo>
+<editRedo>Redo</editRedo>
+<editCut>Cut</editCut>
+<editPaste>Paste</editPaste>
+<editDelete>Delete</editDelete>
+<editSelectAll>Select All</editSelectAll>
+
+<view>View</view>
+<viewJury>Jury view</viewJury>
+<viewTeacher>Teacher view</viewTeacher>
+<viewStudent>Student view</viewStudent>
+
+<formula>Formula</formula>
+<formulaAdd>Add Formula</formulaAdd>
+<formulaDelete>Delete Formula</formulaDelete>
+<formulaEdit>Edit Formula</formulaEdit>
+<formulaPlugin>Plug-In</formulaPlugin>
+<formulaPluginAdd>Add</formulaPluginAdd>
+<formulaPluginRemove>Remove</formulaPluginRemove>
+
+<tools>Tools</tools>
+<toolsConnection>Connection</toolsConnection>
+<toolsStats>Charts</toolsStats>
+<toolsAdmin>Administrator mode</toolsAdmin>
+
+<adminInsertStudent>Isert student</adminInsertStudent>
+<adminDeleteStudent>Delete student</adminDeleteStudent>
+<adminInsertCourse>Insert course</adminInsertCourse>
+<adminDeleteCourse>Delete course</adminDeleteCourse>
+</menuBar>

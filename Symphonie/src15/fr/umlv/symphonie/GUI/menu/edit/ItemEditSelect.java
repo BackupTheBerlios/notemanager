@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.MenuItem;
+import fr.umlv.symphonie.GUI.menu.GUIItem;
 import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
@@ -23,31 +23,13 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemEditSelect extends AbstractGUIItem implements MenuItem {
+public class ItemEditSelect extends AbstractGUIItem  {
 
-	private final JMenuItem item;
 	
 	public ItemEditSelect(GUICache cache) {
-		super(cache);
-		item = new JMenuItem(getMap().get("editSelectAll"));
-		ItemEdit itemFile = (ItemEdit)(getRegistry().get("edit"));		
-		itemFile.getJMenu().add(item);
-		register();
+		super(cache,"editSelect","edit");
 	}	
-	/* (non-Javadoc)
-	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#register()
-	 */
-	public void register() {
-		getRegistry().put("editSelectAll",this);				
-	}
-
-	/* (non-Javadoc)
-	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setText()
-	 */
-	public void setText() {
-		item.setText(getMap().get("editSelectAll"));		
-	}
-
+	
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()
 	 */

@@ -8,6 +8,7 @@ package fr.umlv.symphonie.GUI;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -16,6 +17,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
+import fr.umlv.symphonie.GUI.menu.GUIItem;
 
 /**
  * @author jraselin
@@ -25,7 +27,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  */
 public class GUICache {
 	static private final Map<String,String> map =new HashMap<String,String>();
-	static private final Map<String,AbstractGUIItem> registry = new HashMap<String,AbstractGUIItem>();
+	static private final Map<String,GUIItem> registry = new HashMap<String,GUIItem>();
 	private final String defaultLangage = "menu_FR.xml";
 	private static boolean isInstancied = false;
 	private static GUICache instance;
@@ -61,7 +63,7 @@ public class GUICache {
 	 * 
 	 * @return
 	 */
-	public Map<String,AbstractGUIItem> getRegistry(){
+	public Map<String,GUIItem> getRegistry(){
 		return registry;
 	}
 	/**
@@ -70,8 +72,15 @@ public class GUICache {
 	 * @throws IOException
 	 * @throws ParserConfigurationException
 	 */
-	public void setLangage() throws SAXException,IOException,ParserConfigurationException{
-		LanguageParser.parse(defaultLangage,map);
+	public void setLangage(String fileName) throws SAXException,IOException,ParserConfigurationException{
+		LanguageParser.parse(fileName,map);
+		Iterator it = registry.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry pairs = (Map.Entry)it.next();			
+			((GUIItem)pairs.getValue()).setText();			
+		}
+		
+		
 	}
 	
 }

@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.MenuItem;
+import fr.umlv.symphonie.GUI.menu.GUIItem;
 import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
@@ -23,31 +23,12 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemFileExport extends AbstractGUIItem implements MenuItem {
-
-	private final JMenuItem item;
+public class ItemFileExport extends AbstractGUIItem  {
 	
 	public ItemFileExport(GUICache cache) {
-		super(cache);
-		item = new JMenuItem(getMap().get("fileExport"));
-		ItemFile itemFile = (ItemFile)(getRegistry().get("file"));		
-		itemFile.getJMenu().add(item);
-		register();
+		super(cache,"fileExport","file");
 	}	
-	/* (non-Javadoc)
-	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#register()
-	 */
-	public void register() {
-		getRegistry().put("fileExport",this);				
-	}
-
-	/* (non-Javadoc)
-	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setText()
-	 */
-	public void setText() {
-		item.setText(getMap().get("fileExport"));		
-	}
-
+	
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()
 	 */
