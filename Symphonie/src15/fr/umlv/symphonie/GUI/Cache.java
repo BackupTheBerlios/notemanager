@@ -18,10 +18,12 @@ import fr.umlv.symphonie.database.SymphonieDatabaseRequest;
  * @author jrichert
  *
  */
-public abstract class Cache {
+public class Cache {
 
  private final SymphonieDatabaseRequest request = new DefaultSymphonieDatabaseRequest();
 
+ private static boolean isInstance = false;
+ private static Cache cache;
  private final List<String> listStudents ;
  private final List<String> listCourses;
  
@@ -33,12 +35,26 @@ public abstract class Cache {
   * @throws DriverClassNotFoundException
   * @throws ConnectionFailException
   */
- public Cache() throws SQLException,DriverClassNotFoundException,ConnectionFailException
+ private Cache() throws SQLException,DriverClassNotFoundException,ConnectionFailException
  {
      listStudents = request.getListStudents();
      listCourses = request.getListCourses();
      mapCoursesIntitulates = fillMapCoursesIntitulates();     
  }
+ 
+ 
+ public static Cache newCache() throws SQLException, DriverClassNotFoundException, ConnectionFailException
+ {
+     if(!isInstance)
+     {
+         cache = new Cache();
+         isInstance = true;
+     }
+     
+     return cache;
+ }
+ 
+ 
  /**
   * 
   * @return
@@ -55,8 +71,14 @@ public abstract class Cache {
      }
      return map;          
  }
+protected List<String> getListCourses(){
+    return listCourses;
+}
 
  
+ protected List<String> getListStudents(){
+    return listStudents;     
+ }
  
  
 }
