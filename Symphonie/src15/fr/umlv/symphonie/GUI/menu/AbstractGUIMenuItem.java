@@ -41,8 +41,9 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 		}
 		else {
 			item = new JMenuItem(getItemName());
-			JMenu parent =(JMenu) guiCache.getMenuRegistry().get(menuName).getItem();
-			parent.add(item);		
+			//JMenu parent =(JMenu) guiCache.getMenuRegistry().get(menuName).getItem();
+			guiCache.getMenuRegistry().get(menuName).getItem().add(item);
+			//parent.add(item);		
 		}
 		
 		register();

@@ -8,8 +8,7 @@ package fr.umlv.symphonie.GUI.toolbar;
 
 
 import javax.swing.AbstractButton;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import javax.swing.JButton;
 import fr.umlv.symphonie.GUI.GUICache;
 import fr.umlv.symphonie.GUI.menu.GUIItem;
 
@@ -23,7 +22,7 @@ public abstract class AbstractGUIToolBarItem implements GUIItem{
 
 	private final GUICache guiCache;
 	private final String itemName;	
-	//private final AbstractButton item;
+	private final AbstractButton item;
 	
 	/**
 	 * 
@@ -34,16 +33,15 @@ public abstract class AbstractGUIToolBarItem implements GUIItem{
 	public AbstractGUIToolBarItem(GUICache guiCache,String itemName) {
 		this.itemName=itemName;
 		this.guiCache=guiCache;		
-		
-		
-		
+		item = new JButton(getItemName());
+		guiCache.getToolBar().add(item);
+		register();		
 	}		
 	/**
 	 * 
 	 */
 	public AbstractButton getItem(){
-		//return item;
-		return null;
+		return item;		
 	}
 	
 	/**
@@ -58,13 +56,13 @@ public abstract class AbstractGUIToolBarItem implements GUIItem{
 	 * 
 	 */
 	public void register(){
-		guiCache.getMenuRegistry().put(itemName,this);
+		guiCache.getToolBarRegistry().put(itemName,this);
 	}
 	/**
 	 * 
 	 */
 	public void setText(){
-		//item.setText(getItemName());
+		item.setText(getItemName());
 	}
 	/**
 	 * 

@@ -6,6 +6,7 @@
  */
 package fr.umlv.symphonie.GUI;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JSeparator;
 import javax.swing.JToolBar;
@@ -57,6 +59,8 @@ public class StartGUI {
 		JMenuBar menuBar = new JMenuBar();
 		JToolBar toolBar = new JToolBar();
 		
+		frame.add(toolBar,BorderLayout.NORTH);
+				
 		frame.setJMenuBar(menuBar);
 		try {
 		// cache pour les items
@@ -95,7 +99,7 @@ public class StartGUI {
 		
 		
 		
-		
+		/*
 		JButton button = new JButton("changer la langue");
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -113,6 +117,8 @@ public class StartGUI {
 			}
 		});
 		frame.add(button);
+		*/
+		
 		}
 		catch(SAXException s){
 			System.out.println(s.getMessage());

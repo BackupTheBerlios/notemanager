@@ -65,6 +65,7 @@ public class GUICache {
 	public Map<String,String> getMapLangage(){
 		return mapLangage;
 	}
+	
 	/**
 	 * 
 	 * @return
@@ -72,6 +73,23 @@ public class GUICache {
 	public Map<String,GUIItem> getMenuRegistry(){
 		return menuRegistry;
 	}
+	/**
+	 * 
+	 * @return
+	 */
+	public Map<String,GUIItem> getPopupRegistry(){
+		return popupRegistry;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Map<String,GUIItem> getToolBarRegistry(){
+		return toolBarRegistry;
+	}
+	
 	
 	/**
 	 * 
