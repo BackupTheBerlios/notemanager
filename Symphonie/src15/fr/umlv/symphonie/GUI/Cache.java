@@ -116,7 +116,13 @@ public class Cache {
      return map;
  }
  
- 
+ /**
+  * Getter for the numberColumns
+  * @return field numberColumns
+  */ 
+ public int getNumberColumns(){
+     return numberColumns;
+ }
  
  /**
   * Getter for an arrayList
