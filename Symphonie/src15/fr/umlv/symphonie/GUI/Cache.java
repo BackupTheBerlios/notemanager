@@ -31,7 +31,8 @@ public class Cache {
  private final Map<Integer,Student> mapStudents;
  
  private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
- 
+
+ private final int numberColumns;
 
  
  
@@ -48,6 +49,7 @@ public class Cache {
      listCourses = request.getListCourses();   
      mapCoursesIntitulates = fillMapCoursesIntitulates();     
      mapStudents = fillMapStudents();
+     numberColumns = request.getNumberOfColumn();
  }
  
  /**
@@ -113,6 +115,8 @@ public class Cache {
     
      return map;
  }
+ 
+ 
  
  /**
   * Getter for an arrayList
