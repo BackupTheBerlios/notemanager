@@ -8,7 +8,6 @@ package fr.umlv.symphonie.GUI.view.student;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;

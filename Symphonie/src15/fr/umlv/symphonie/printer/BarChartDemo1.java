@@ -31,7 +31,7 @@
  * Original Author:  David Gilbert (for Object Refinery Limited);
  * Contributor(s):   ;
  *
- * $Id: BarChartDemo1.java,v 1.2 2005/03/25 00:51:57 dalton Exp $
+ * $Id: BarChartDemo1.java,v 1.3 2005/03/25 19:38:30 dalton Exp $
  *
  * Changes
  * -------

@@ -29,7 +29,6 @@ public class Cache {
  private final List<String> listCourses;
  private final Map<String,Student> mapStudents;
  private final Map<String, Map<String,Integer> > mapCoursesIntitulates;
-
  
  /**
   * Create an object with Students' list, Courses' list, Intitulates' courses, students' comment

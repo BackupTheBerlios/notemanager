@@ -14,17 +14,15 @@ import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 import fr.umlv.symphonie.GUI.Cache;
+import fr.umlv.symphonie.GUI.GUICache;
 
 
 /**
@@ -36,21 +34,20 @@ import fr.umlv.symphonie.GUI.Cache;
 public class ViewStudent {
 
 	
-	private final JComponent component;
 	private final JTable table;
 	private final JTextField label = new JTextField();
 	/**
 	 * 
 	 * @param cache
 	 */
-	public ViewStudent(Cache cache){
+	public ViewStudent(Cache cache,GUICache gui){
 		table = createTable(cache);		
 		label.setEditable(false);
 		JPanel selection = createSelectionPanel(cache);
 		JScrollPane tablePane = new JScrollPane(table);
 		JSplitPane splitpane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,selection,tablePane);	
-		splitpane.setDividerSize(0);
-		component = splitpane;
+		splitpane.setDividerSize(0);		
+		gui.getViewMap().put("student",splitpane);
 		
 	}
 	
@@ -185,14 +182,5 @@ public class ViewStudent {
 		table.setShowGrid(false);	
 		table.setDefaultRenderer(Object.class,new ViewStudentTableCellRenderer());
 		return table;
-	}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public JComponent getComponent(){
-		return component;
-	}
-	
+	}		
 }

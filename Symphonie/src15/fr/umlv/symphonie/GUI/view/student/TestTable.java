@@ -6,16 +6,12 @@
  */
 package fr.umlv.symphonie.GUI.view.student;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.xml.sax.SAXException;
 
 import fr.umlv.symphonie.GUI.Cache;
@@ -39,10 +35,10 @@ public class TestTable {
 		try {
 			GUICache guicache = GUICache.newInstance();
 			Cache cache = Cache.newCache();			
-			ViewStudent view = new ViewStudent(cache);	
+			ViewStudent view = new ViewStudent(cache,guicache);	
 							
 			Container cont = frame.getContentPane();
-			cont.add(view.getComponent());			
+			cont.add(guicache.getViewMap().get("student"));			
 		}
 		
 		
