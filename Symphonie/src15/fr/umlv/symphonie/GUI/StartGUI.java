@@ -91,11 +91,8 @@ public class StartGUI {
 		JButton button = new JButton("changer la langue");
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				try{
-					System.out.println("changemt langue");
-				cache.setLangage("menu_EN.xml");
-				System.out.println("changemt langue termine");
-				
+				try{				
+				cache.setLangage("menu_EN.xml");								
 				}
 				catch(SAXException s){
 					System.out.println(s.getMessage());
