@@ -6,15 +6,7 @@
  */
 package fr.umlv.symphonie.GUI.menu.file;
 
-import java.io.IOException;
-
-import javax.swing.JMenuItem;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.GUIItem;
 import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
@@ -24,8 +16,6 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class ItemFileImport extends AbstractGUIItem {
-
-	
 	
 	public ItemFileImport(GUICache cache) {
 		super(cache,"fileImport","file");

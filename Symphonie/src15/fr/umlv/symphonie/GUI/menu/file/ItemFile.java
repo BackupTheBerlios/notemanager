@@ -6,11 +6,7 @@
  */
 package fr.umlv.symphonie.GUI.menu.file;
 
-
-import javax.swing.JMenu;
-
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.GUIItem;
 import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
@@ -20,8 +16,6 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class ItemFile extends AbstractGUIItem {
-
-	
 	
 	public ItemFile(GUICache cache) {
 		super(cache,"file","");

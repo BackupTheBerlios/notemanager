@@ -6,20 +6,11 @@
  */
 package fr.umlv.symphonie.GUI.menu;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.AbstractButton;
-import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.LanguageParser;
 
 /**
  * @author everybody
@@ -45,11 +36,11 @@ public abstract class AbstractGUIItem implements GUIItem{
 		this.guiCache=guiCache;		
 		this.menuName=menuName;
 		if(menuName.equals("")){
-			item = new JMenu(getItemName(menuName));
+			item = new JMenu(getItemName());
 		}
 		else {
-			item = new JMenuItem(getItemName(itemName));
-			JMenu parent =(JMenu) guiCache.getRegistry().get(menuName);
+			item = new JMenuItem(getItemName());
+			JMenu parent =(JMenu) guiCache.getRegistry().get(menuName).getItem();
 			parent.add(item);		
 		}
 		register();
@@ -66,7 +57,7 @@ public abstract class AbstractGUIItem implements GUIItem{
 	 * @param itemName
 	 * @return
 	 */	
-	private String getItemName(String itemName){
+	private String getItemName(){
 		return guiCache.getMapLangage().get(itemName);
 	}
 	/**
@@ -79,7 +70,7 @@ public abstract class AbstractGUIItem implements GUIItem{
 	 * 
 	 */
 	public void setText(){
-		item.setText(itemName);
+		item.setText(getItemName());
 	}
 	/**
 	 * 
