@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  * @author jrichert
- *
+ *This class is used by cache. Every object has a name, a firstName, a HasMap with notes and a comment
  */
 public class Student {
     private String name;
@@ -40,23 +40,47 @@ public class Student {
         return notesMap;
     }
 
+    /**
+     * 
+     * @param course
+     * @param intitulate
+     * @param note
+     */
     public void setNoteFromCourseAndIntitulate(String course,String intitulate,double note){
        notesMap.get(course).put(intitulate,note);
              
     }
     
+    /**
+     * This method return a student's note for a course and an intitulate
+     * @param course is the key for the first HashMap
+     * @param intitulate is the key for he second HashMap
+     * @return note
+     */
     public double getNoteFromCourseAndIntitulate(String course,String intitulate){
         return notesMap.get(course).get(intitulate);
     }
     
+    /**
+     * This method return student's note
+     * @return name of student
+     */
     public String getName(){
         return name;
     }
     
+    /**
+     * This method return student's firstName
+     * @return firstName of student
+     */
     public String getFirstName(){
         return firstName;
     }
     
+    /**
+     * This method return student's comment
+     * @return comment of student
+     */
     public String getComment(){
         return comment;
     }
