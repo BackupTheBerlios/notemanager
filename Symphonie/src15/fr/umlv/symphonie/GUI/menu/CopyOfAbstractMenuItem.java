@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import fr.umlv.symphonie.GUI.LanguageCache;
+import fr.umlv.symphonie.GUI.LanguageParser;
 
 /**
  * @author everybody
@@ -22,25 +22,25 @@ import fr.umlv.symphonie.GUI.LanguageCache;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class MenuItemCache {
+public class CopyOfAbstractMenuItem {
 
 	static private final Map<String,String> map =new HashMap<String,String>();
-	static private final Map<String,MenuItemCache> registry = new HashMap<String,MenuItemCache>();
-	static private LanguageCache cache;
+	static private final Map<String,CopyOfAbstractMenuItem> registry = new HashMap<String,CopyOfAbstractMenuItem>();
+	static private LanguageParser cache;
 	private final String defaultLangage = "menu_FR.xml";
-	
-	public MenuItemCache() throws SAXException,IOException,ParserConfigurationException{					
-			cache = LanguageCache.newLanguageCache(defaultLangage,map);
+	/*
+	public CopyOfAbstractMenuItem() throws SAXException,IOException,ParserConfigurationException{					
+			cache = LanguageParser.newLanguageCache(defaultLangage,map);
 			// fill language map 
 			cache.parseLanguageConfigFile();						
 	}
-	
+	*/
 			
 	/**
 	 * 
 	 * @return
 	 */
-	public Map<String,MenuItemCache> getRegistry(){
+	public Map<String,CopyOfAbstractMenuItem> getRegistry(){
 		return registry;
 	}
 	/**

@@ -15,12 +15,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPopupMenu;
 import javax.swing.JSeparator;
+import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import fr.umlv.symphonie.GUI.menu.MenuItemCache;
+import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 import fr.umlv.symphonie.GUI.menu.edit.ItemEdit;
 import fr.umlv.symphonie.GUI.menu.edit.ItemEditCut;
 import fr.umlv.symphonie.GUI.menu.edit.ItemEditDelete;
@@ -50,39 +51,39 @@ public class StartGUI {
 		
 		
 		JMenuBar menuBar = new JMenuBar();
-		
+		JToolBar toolBar = new JToolBar();
 		
 		frame.setJMenuBar(menuBar);
 		try {
 		// cache pour les items
-		MenuItemCache cache = new MenuItemCache();
+			GUICache cache = GUICache.newInstance();
 		// add JMenu file to the menubar
-		ItemFile itemFile = new ItemFile();		
+		ItemFile itemFile = new ItemFile(cache);		
 		menuBar.add(itemFile.getJMenu());
-		ItemFileExport export = new ItemFileExport();
-		ItemFileImport im = new ItemFileImport();
+		ItemFileExport export = new ItemFileExport(cache);
+		ItemFileImport im = new ItemFileImport(cache);
 		itemFile.getJMenu().add(new JSeparator());
-		ItemFileSave save = new ItemFileSave();
+		ItemFileSave save = new ItemFileSave(cache);
 		itemFile.getJMenu().add(new JSeparator());
-		ItemFilePrint pr = new ItemFilePrint();
+		ItemFilePrint pr = new ItemFilePrint(cache);
 		itemFile.getJMenu().add(new JSeparator());
-		ItemFileExit exit = new ItemFileExit();
+		ItemFileExit exit = new ItemFileExit(cache);
 		
 		
 		
 		// add JMenul edit to the menubar
-		ItemEdit itemEdit =new ItemEdit(); 
+		ItemEdit itemEdit =new ItemEdit(cache); 
 		
 		menuBar.add(itemEdit.getJMenu());
-		ItemEditUndo und = new ItemEditUndo();
-		ItemEditRedo re = new ItemEditRedo();
+		ItemEditUndo und = new ItemEditUndo(cache);
+		ItemEditRedo re = new ItemEditRedo(cache);
 		itemEdit.getJMenu().add(new JSeparator());
-		ItemEditCut c = new ItemEditCut();					
-		ItemEditPaste p = new ItemEditPaste();
+		ItemEditCut c = new ItemEditCut(cache);					
+		ItemEditPaste p = new ItemEditPaste(cache);
 		itemEdit.getJMenu().add(new JSeparator());
-		ItemEditDelete d = new ItemEditDelete();
+		ItemEditDelete d = new ItemEditDelete(cache);
 		itemEdit.getJMenu().add(new JSeparator());
-		ItemEditSelect sel = new ItemEditSelect();
+		ItemEditSelect sel = new ItemEditSelect(cache);
 		
 		
 		

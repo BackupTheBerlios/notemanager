@@ -6,15 +6,12 @@
  */
 package fr.umlv.symphonie.GUI.menu.file;
 
-import java.io.IOException;
 
 import javax.swing.JMenu;
-import javax.xml.parsers.ParserConfigurationException;
 
-import org.xml.sax.SAXException;
-
+import fr.umlv.symphonie.GUI.GUICache;
 import fr.umlv.symphonie.GUI.menu.MenuItem;
-import fr.umlv.symphonie.GUI.menu.MenuItemCache;
+import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
  * @author everybody
@@ -22,11 +19,12 @@ import fr.umlv.symphonie.GUI.menu.MenuItemCache;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemFile extends MenuItemCache implements MenuItem {
+public class ItemFile extends AbstractGUIItem implements MenuItem {
 
 	private final JMenu menu;
 	
-	public ItemFile() throws SAXException,IOException,ParserConfigurationException{
+	public ItemFile(GUICache cache) {
+		super(cache);
 		menu = new JMenu(getMap().get("file"));
 		register();
 	}

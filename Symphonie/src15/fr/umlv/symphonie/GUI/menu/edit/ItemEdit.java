@@ -13,8 +13,9 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import fr.umlv.symphonie.GUI.GUICache;
 import fr.umlv.symphonie.GUI.menu.MenuItem;
-import fr.umlv.symphonie.GUI.menu.MenuItemCache;
+import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
 
 /**
  * @author everybody
@@ -22,11 +23,12 @@ import fr.umlv.symphonie.GUI.menu.MenuItemCache;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemEdit extends MenuItemCache implements MenuItem {
+public class ItemEdit extends AbstractGUIItem implements MenuItem {
 
 	private final JMenu menu;
 	
-	public ItemEdit() throws SAXException,IOException,ParserConfigurationException{
+	public ItemEdit(GUICache cache) {
+		super(cache);
 		menu = new JMenu(getMap().get("edit"));
 		register();
 	}
