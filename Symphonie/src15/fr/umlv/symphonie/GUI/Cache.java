@@ -33,10 +33,11 @@ public class Cache {
  private final Map<String,String> mapCommentFromStudents;
  
  //getCommentFromStudent(String name,String firstName) throws ConnectionFailException,SQLException,DriverClassNotFoundException;
-    
+ //public double getStudentNoteFromCourseAndIntitulate(String name, String firstName, String course,String intitulate) throws ConnectionFailException,SQLException,DriverClassNotFoundException;
+
  
  /**
-  * 
+  * Create an object with Students' list, Courses' list, Intitulates' courses, students' comment
   * @throws SQLException
   * @throws DriverClassNotFoundException
   * @throws ConnectionFailException
@@ -81,9 +82,9 @@ public class Cache {
  
  private Map<String,String> fillMapCommentFromStudents(){
 HashMap<String,String> map = new HashMap<String,String>();
-    for(String s : listCourses){
+   
     
-    }
+    
      return map;
  }
  
@@ -97,7 +98,7 @@ protected List<String> getListCourses(){
 }
 
  
- protected List<String> getListStudents(){
+ protected Map<String,String> getListStudents(){
     return listStudents;     
  }
  
