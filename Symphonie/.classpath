@@ -6,5 +6,6 @@
 	<classpathentry sourcepath="ECLIPSE_HOME/plugins/org.eclipse.jdt.source_3.0.0/src/org.junit_3.8.1/junitsrc.zip" kind="var" path="JUNIT_HOME/junit.jar"/>
 	<classpathentry kind="src" path="plugins"/>
 	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="doc/postgresql-8.0.309.jdbc3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -111,8 +111,8 @@ public class Main {
 		
 		//request.changeIntitulateCoefficient("Exam",12);
 		
-		request.deleteIntitulate("Exam","Java avancee");
-		
+		//request.deleteIntitulate("Exam","Java avancee");
+		request.insertStudent("PIPOO2","JObert");
 		}
 		catch (ConnectionFailException ce)
 		{

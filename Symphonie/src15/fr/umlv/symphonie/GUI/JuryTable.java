@@ -17,7 +17,7 @@ public class JuryTable {
     public JuryTable()
     {
         this.table = new JTable();
-        table.
+       // table.
     }
     
     public JTable getTable()
