@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemEdit extends AbstractGUIMenuItem{
 	
 	public ItemEdit(GUICache cache) {
-		super(cache,"edit","");
+		super(cache,"edit");
 	}		
 
 	/* (non-Javadoc)

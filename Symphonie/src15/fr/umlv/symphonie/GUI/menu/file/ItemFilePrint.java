@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemFilePrint extends AbstractGUIMenuItem {
 	
 	public ItemFilePrint(GUICache cache){
-		super(cache,"filePrint","file");
+		super(cache,"filePrint","file",false);
 	}	
 	
 	/* (non-Javadoc)

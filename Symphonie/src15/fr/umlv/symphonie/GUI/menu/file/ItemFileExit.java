@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemFileExit extends AbstractGUIMenuItem {
 		
 	public ItemFileExit(GUICache cache){
-		super(cache,"fileExit","file");
+		super(cache,"fileExit","file",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

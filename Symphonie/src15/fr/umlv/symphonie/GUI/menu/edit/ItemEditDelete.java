@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemEditDelete extends AbstractGUIMenuItem {
 
 	public ItemEditDelete(GUICache cache) {
-		super(cache,"editDelete","edit");
+		super(cache,"editDelete","edit",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

@@ -20,7 +20,7 @@ public class ItemEditUndo extends AbstractGUIMenuItem  {
 	
 	
 	public ItemEditUndo(GUICache cache) {
-		super(cache,"editUndo","edit");
+		super(cache,"editUndo","edit",false);
 	}	
 	
 	/* (non-Javadoc)

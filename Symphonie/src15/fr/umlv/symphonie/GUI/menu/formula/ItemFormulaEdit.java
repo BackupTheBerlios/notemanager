@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemFormulaEdit extends AbstractGUIMenuItem {
 	
 	public ItemFormulaEdit(GUICache cache) {
-		super(cache,"formulaEdit","formula");
+		super(cache,"formulaEdit","formula",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

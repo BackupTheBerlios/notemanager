@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemEditPaste extends AbstractGUIMenuItem {
 	
 	public ItemEditPaste(GUICache cache) {
-		super(cache,"editPaste","edit");
+		super(cache,"editPaste","edit",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemEditCut extends AbstractGUIMenuItem {
 
 	public ItemEditCut(GUICache cache) {
-		super(cache,"editCut","edit");	
+		super(cache,"editCut","edit",false);	
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

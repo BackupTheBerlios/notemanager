@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemFormulaPluginRemove extends AbstractGUIMenuItem  {
 
 	public ItemFormulaPluginRemove(GUICache cache) {
-		super(cache,"formulaPluginRemove","formulaPlugin");
+		super(cache,"formulaPluginRemove","formulaPlugin",false);
 	}
 	
 	/* (non-Javadoc)

@@ -19,7 +19,7 @@ public class ItemEditRedo extends AbstractGUIMenuItem {
 
 	
 	public ItemEditRedo(GUICache cache){
-		super(cache,"editRedo","edit");
+		super(cache,"editRedo","edit",false);
 	}	
 	/* (non-Javadoc)
 	

@@ -26,28 +26,42 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 	private final AbstractButton item;
 	
 	/**
-	 * 
+	 * for JMenuItem
 	 * @param guiCache
 	 * @param itemName
 	 * @param menuName
 	 */
-	public AbstractGUIMenuItem(GUICache guiCache,String itemName,String menuName) {
+	public AbstractGUIMenuItem(GUICache guiCache,String itemName,String menuName,boolean isSubMenu) {
 		this.itemName=itemName;
 		this.guiCache=guiCache;		
-		this.menuName=menuName;
-		if(menuName.equals("")){
-			item = new JMenu(getItemName());
-			guiCache.getMenuBar().add(item);
+		this.menuName=menuName;	
+		if(!isSubMenu){
+			item = new JMenuItem(getItemName());				
 		}
 		else {
-			item = new JMenuItem(getItemName());
-			//JMenu parent =(JMenu) guiCache.getMenuRegistry().get(menuName).getItem();
-			guiCache.getMenuRegistry().get(menuName).getItem().add(item);
-			//parent.add(item);		
+			item = new JMenu(getItemName());
 		}
-		
+		guiCache.getMenuRegistry().get(menuName).getItem().add(item);
 		register();
-	}		
+		
+	}	
+	
+	/**
+	 * for Jmenu
+	 * @param guiCache
+	 * @param itemName
+	 */
+	public AbstractGUIMenuItem(GUICache guiCache,String itemName) {
+		this.itemName=itemName;
+		this.guiCache=guiCache;	
+		this.menuName=null;
+		
+		item = new JMenu(getItemName());
+		guiCache.getMenuBar().add(item);
+		register();
+	}
+	
+	
 	/**
 	 * 
 	 */

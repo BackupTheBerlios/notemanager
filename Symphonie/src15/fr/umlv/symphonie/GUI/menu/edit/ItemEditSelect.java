@@ -19,7 +19,7 @@ public class ItemEditSelect extends AbstractGUIMenuItem  {
 
 	
 	public ItemEditSelect(GUICache cache) {
-		super(cache,"editSelectAll","edit");
+		super(cache,"editSelectAll","edit",false);
 	}	
 	
 	/* (non-Javadoc)

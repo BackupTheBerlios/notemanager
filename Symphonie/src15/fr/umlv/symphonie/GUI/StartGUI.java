@@ -40,7 +40,17 @@ import fr.umlv.symphonie.GUI.menu.file.ItemFileExport;
 import fr.umlv.symphonie.GUI.menu.file.ItemFileImport;
 import fr.umlv.symphonie.GUI.menu.file.ItemFilePrint;
 import fr.umlv.symphonie.GUI.menu.file.ItemFileSave;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormula;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaAdd;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaDelete;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaEdit;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPlugin;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPluginAdd;
+import fr.umlv.symphonie.GUI.menu.formula.ItemFormulaPluginRemove;
 import fr.umlv.symphonie.GUI.menu.view.ItemView;
+import fr.umlv.symphonie.GUI.menu.view.ItemViewJury;
+import fr.umlv.symphonie.GUI.menu.view.ItemViewStudent;
+import fr.umlv.symphonie.GUI.menu.view.ItemViewTeacher;
 
 /**
  * @author jraselin
@@ -56,18 +66,19 @@ public class StartGUI {
 		frame.setSize(640,400);
 		
 		
-		JMenuBar menuBar = new JMenuBar();
-		JToolBar toolBar = new JToolBar();
 		
-		frame.add(toolBar,BorderLayout.NORTH);
+		//frame.add(toolBar,BorderLayout.NORTH);
 				
-		frame.setJMenuBar(menuBar);
+		
 		try {
 		// cache pour les items
 		final GUICache cache = GUICache.newInstance();
+		frame.setJMenuBar(cache.getMenuBar());
+		frame.add(cache.getToolBar(),BorderLayout.NORTH);
+		
 		// add JMenu file to the menubar
 		ItemFile itemFile = new ItemFile(cache);		
-		menuBar.add(itemFile.getItem());
+		//menuBar.add(itemFile.getItem());
 		ItemFileExport export = new ItemFileExport(cache);
 		ItemFileImport im = new ItemFileImport(cache);
 		itemFile.getItem().add(new JSeparator());
@@ -82,7 +93,7 @@ public class StartGUI {
 		// add JMenul edit to the menubar
 		ItemEdit itemEdit =new ItemEdit(cache); 
 		
-		menuBar.add(itemEdit.getItem());
+		//menuBar.add(itemEdit.getItem());
 		ItemEditUndo und = new ItemEditUndo(cache);
 		ItemEditRedo re = new ItemEditRedo(cache);
 		itemEdit.getItem().add(new JSeparator());
@@ -95,8 +106,17 @@ public class StartGUI {
 		
 //		 add JMenul edit to the menubar
 		ItemView itemView = new ItemView(cache);
+		ItemViewJury jury = new ItemViewJury(cache);
+		ItemViewStudent j = new ItemViewStudent(cache);
+		ItemViewTeacher ju = new ItemViewTeacher(cache);
 		
-		
+		ItemFormula formula = new ItemFormula(cache);
+		ItemFormulaAdd fo = new ItemFormulaAdd(cache);
+		ItemFormulaDelete fofd = new ItemFormulaDelete(cache);
+		ItemFormulaEdit fdo = new ItemFormulaEdit(cache);
+		ItemFormulaPlugin foss = new ItemFormulaPlugin(cache);
+		ItemFormulaPluginAdd fossm = new ItemFormulaPluginAdd(cache);
+		ItemFormulaPluginRemove fodss = new ItemFormulaPluginRemove(cache);
 		
 		
 		/*

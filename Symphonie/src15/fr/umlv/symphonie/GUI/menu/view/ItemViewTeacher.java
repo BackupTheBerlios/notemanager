@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemViewTeacher extends AbstractGUIMenuItem {
 	
 	public ItemViewTeacher(GUICache cache) {
-		super(cache,"viewTeacher","view");
+		super(cache,"viewTeacher","view",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()

@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemFormula extends AbstractGUIMenuItem {
 	
 	public ItemFormula(GUICache cache) {
-		super(cache,"formula","");
+		super(cache,"formula");
 	}
 	
 	/* (non-Javadoc)

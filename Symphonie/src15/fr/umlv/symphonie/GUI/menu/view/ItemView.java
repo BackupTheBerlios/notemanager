@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 public class ItemView extends AbstractGUIMenuItem {
 	
 	public ItemView(GUICache cache) {
-		super(cache,"view","");
+		super(cache,"view");
 	}
 	
 	/* (non-Javadoc)

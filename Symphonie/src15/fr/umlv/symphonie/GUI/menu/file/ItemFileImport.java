@@ -19,7 +19,7 @@ public class ItemFileImport extends AbstractGUIMenuItem {
 
 	
 	public ItemFileImport(GUICache cache) {
-		super(cache,"fileImport","file");
+		super(cache,"fileImport","file",false);
 	}		
 	/* (non-Javadoc)
 	 * @see fr.umlv.symphonie.GUI.menu.MenuItem#setAction()
