@@ -44,7 +44,6 @@ public class LanguageHandler extends DefaultHandler {
 		
 	}
 	
-
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		
 	}
