@@ -41,6 +41,7 @@ public class TestTable {
 			Container cont = frame.getContentPane();
 			cont.add(view.getScrollPane());
 			
+			DialogSelectStudent dialog = new DialogSelectStudent(frame);
 					
 		}
 		/*
