@@ -7,7 +7,7 @@
 package fr.umlv.symphonie.GUI.menu.file;
 
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
+import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 
 /**
  * @author everybody
@@ -15,7 +15,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemFileExport extends AbstractGUIItem  {
+public class ItemFileExport extends AbstractGUIMenuItem  {
 	
 	public ItemFileExport(GUICache cache) {
 		super(cache,"fileExport","file");

@@ -24,7 +24,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
+
 import fr.umlv.symphonie.GUI.menu.edit.ItemEdit;
 import fr.umlv.symphonie.GUI.menu.edit.ItemEditCut;
 import fr.umlv.symphonie.GUI.menu.edit.ItemEditDelete;
@@ -38,6 +38,7 @@ import fr.umlv.symphonie.GUI.menu.file.ItemFileExport;
 import fr.umlv.symphonie.GUI.menu.file.ItemFileImport;
 import fr.umlv.symphonie.GUI.menu.file.ItemFilePrint;
 import fr.umlv.symphonie.GUI.menu.file.ItemFileSave;
+import fr.umlv.symphonie.GUI.menu.view.ItemView;
 
 /**
  * @author jraselin
@@ -89,6 +90,8 @@ public class StartGUI {
 		ItemEditSelect sel = new ItemEditSelect(cache);
 		
 //		 add JMenul edit to the menubar
+		ItemView itemView = new ItemView(cache);
+		
 		
 		
 		

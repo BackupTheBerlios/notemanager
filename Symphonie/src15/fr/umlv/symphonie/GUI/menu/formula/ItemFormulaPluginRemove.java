@@ -7,7 +7,7 @@
 package fr.umlv.symphonie.GUI.menu.formula;
 
 import fr.umlv.symphonie.GUI.GUICache;
-import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
+import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 
 /**
  * @author everybody
@@ -15,7 +15,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIItem;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class ItemFormulaPluginRemove extends AbstractGUIItem  {
+public class ItemFormulaPluginRemove extends AbstractGUIMenuItem  {
 
 	public ItemFormulaPluginRemove(GUICache cache) {
 		super(cache,"formulaPluginRemove","formulaPlugin");

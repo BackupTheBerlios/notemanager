@@ -18,7 +18,7 @@ import fr.umlv.symphonie.GUI.GUICache;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public abstract class AbstractGUIItem implements GUIItem{
+public abstract class AbstractGUIMenuItem implements GUIItem{
 
 	private final GUICache guiCache;
 	private final String itemName;
@@ -31,7 +31,7 @@ public abstract class AbstractGUIItem implements GUIItem{
 	 * @param itemName
 	 * @param menuName
 	 */
-	public AbstractGUIItem(GUICache guiCache,String itemName,String menuName) {
+	public AbstractGUIMenuItem(GUICache guiCache,String itemName,String menuName) {
 		this.itemName=itemName;
 		this.guiCache=guiCache;		
 		this.menuName=menuName;
@@ -40,9 +40,10 @@ public abstract class AbstractGUIItem implements GUIItem{
 		}
 		else {
 			item = new JMenuItem(getItemName());
-			JMenu parent =(JMenu) guiCache.getRegistry().get(menuName).getItem();
+			JMenu parent =(JMenu) guiCache.getMenuRegistry().get(menuName).getItem();
 			parent.add(item);		
 		}
+		
 		register();
 	}		
 	/**
@@ -64,7 +65,7 @@ public abstract class AbstractGUIItem implements GUIItem{
 	 * 
 	 */
 	public void register(){
-		guiCache.getRegistry().put(itemName,this);
+		guiCache.getMenuRegistry().put(itemName,this);
 	}
 	/**
 	 * 
