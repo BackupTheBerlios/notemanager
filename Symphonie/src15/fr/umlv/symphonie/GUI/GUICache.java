@@ -12,11 +12,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 
+import javax.swing.JMenuBar;
+import javax.swing.JToolBar;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
-
-import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
 import fr.umlv.symphonie.GUI.menu.GUIItem;
 
 /**
@@ -26,8 +26,14 @@ import fr.umlv.symphonie.GUI.menu.GUIItem;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class GUICache {
-	static private final Map<String,String> map =new HashMap<String,String>();
+	static private final Map<String,String> mapLangage =new HashMap<String,String>();
 	static private final Map<String,GUIItem> menuRegistry = new HashMap<String,GUIItem>();
+	static private final Map<String,GUIItem> toolBarRegistry = new HashMap<String,GUIItem>();
+	static private final Map<String,GUIItem> popupRegistry = new HashMap<String,GUIItem>();
+	
+	static private final JMenuBar menuBar = new JMenuBar(); 
+	static private final JToolBar toolBar = new JToolBar();
+	
 	private final String defaultLangage = "menu_FR.xml";
 	private static boolean isInstancied = false;
 	private static GUICache instance;
@@ -38,7 +44,7 @@ public class GUICache {
 	 * @throws ParserConfigurationException
 	 */
 	private GUICache() throws SAXException,IOException,ParserConfigurationException{					
-		LanguageParser.parse(defaultLangage,map);				
+		LanguageParser.parse(defaultLangage,mapLangage);				
 	}
 	/**
 	 * 
@@ -57,7 +63,7 @@ public class GUICache {
 	 * @return
 	 */
 	public Map<String,String> getMapLangage(){
-		return map;
+		return mapLangage;
 	}
 	/**
 	 * 
@@ -66,6 +72,22 @@ public class GUICache {
 	public Map<String,GUIItem> getMenuRegistry(){
 		return menuRegistry;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public JMenuBar getMenuBar(){
+		return menuBar;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public JToolBar getToolBar(){
+		return toolBar;
+	}
+	
 	/**
 	 * 
 	 * @throws SAXException
@@ -73,7 +95,7 @@ public class GUICache {
 	 * @throws ParserConfigurationException
 	 */
 	public void setLangage(String fileName) throws SAXException,IOException,ParserConfigurationException{
-		LanguageParser.parse(fileName,map);
+		LanguageParser.parse(fileName,mapLangage);
 		Iterator it = menuRegistry.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry pairs = (Map.Entry)it.next();			

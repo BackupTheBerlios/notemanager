@@ -4,13 +4,14 @@
  * TODO To change the template for this generated file go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-package fr.umlv.symphonie.GUI.menu;
+package fr.umlv.symphonie.GUI.toolbar;
 
 
 import javax.swing.AbstractButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import fr.umlv.symphonie.GUI.GUICache;
+import fr.umlv.symphonie.GUI.menu.GUIItem;
 
 /**
  * @author everybody
@@ -18,12 +19,11 @@ import fr.umlv.symphonie.GUI.GUICache;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public abstract class AbstractGUIMenuItem implements GUIItem{
+public abstract class AbstractGUIToolBarItem implements GUIItem{
 
 	private final GUICache guiCache;
-	private final String itemName;
-	private final String menuName;
-	private final AbstractButton item;
+	private final String itemName;	
+	//private final AbstractButton item;
 	
 	/**
 	 * 
@@ -31,27 +31,19 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 	 * @param itemName
 	 * @param menuName
 	 */
-	public AbstractGUIMenuItem(GUICache guiCache,String itemName,String menuName) {
+	public AbstractGUIToolBarItem(GUICache guiCache,String itemName) {
 		this.itemName=itemName;
 		this.guiCache=guiCache;		
-		this.menuName=menuName;
-		if(menuName.equals("")){
-			item = new JMenu(getItemName());
-			guiCache.getMenuBar().add(item);
-		}
-		else {
-			item = new JMenuItem(getItemName());
-			JMenu parent =(JMenu) guiCache.getMenuRegistry().get(menuName).getItem();
-			parent.add(item);		
-		}
 		
-		register();
+		
+		
 	}		
 	/**
 	 * 
 	 */
 	public AbstractButton getItem(){
-		return item;
+		//return item;
+		return null;
 	}
 	
 	/**
@@ -72,16 +64,8 @@ public abstract class AbstractGUIMenuItem implements GUIItem{
 	 * 
 	 */
 	public void setText(){
-		item.setText(getItemName());
+		//item.setText(getItemName());
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	public GUICache getGuiCache(){
-		return guiCache;
-	}
-	
 	/**
 	 * 
 	 */

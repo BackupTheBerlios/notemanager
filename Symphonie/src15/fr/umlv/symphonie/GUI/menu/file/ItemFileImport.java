@@ -16,6 +16,7 @@ import fr.umlv.symphonie.GUI.menu.AbstractGUIMenuItem;
  * Window - Preferences - Java - Code Style - Code Templates
  */
 public class ItemFileImport extends AbstractGUIMenuItem {
+
 	
 	public ItemFileImport(GUICache cache) {
 		super(cache,"fileImport","file");

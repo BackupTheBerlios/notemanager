@@ -7,7 +7,7 @@
 package fr.umlv.symphonie.GUI.menu;
 
 import javax.swing.AbstractButton;
-import javax.swing.JComponent;
+
 
 /**
  * @author everybody
