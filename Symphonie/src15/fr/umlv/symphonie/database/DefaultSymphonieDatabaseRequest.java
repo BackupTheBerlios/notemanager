@@ -43,7 +43,7 @@ public class DefaultSymphonieDatabaseRequest implements SymphonieDatabaseRequest
 	/***************************************************
 	 *                  BASIC REQUEST                  *
 	 ***************************************************/
-	public Map<String,String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException
+	public List<String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException
 	{		
 			return new ListStudent().getListStudents();		
 	}

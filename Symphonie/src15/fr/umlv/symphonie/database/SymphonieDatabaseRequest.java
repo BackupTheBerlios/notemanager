@@ -30,7 +30,7 @@ public interface SymphonieDatabaseRequest {
 	 * @throws SQLException
 	 * @throws DriverClassNotFoundException
 	 */
-	public Map<String,String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException;
+	public List<String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException;
 	/**
 	 * OK
 	 * @return

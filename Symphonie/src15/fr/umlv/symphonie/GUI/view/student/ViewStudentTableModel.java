@@ -6,8 +6,12 @@
  */
 package fr.umlv.symphonie.GUI.view.student;
  
+import java.util.List;
+import java.util.ArrayList;
+
 import javax.swing.table.AbstractTableModel;
 import fr.umlv.symphonie.GUI.Cache;
+import fr.umlv.symphonie.GUI.Student;
 
 /**
  * @author jraselin
@@ -17,13 +21,31 @@ import fr.umlv.symphonie.GUI.Cache;
  */
 public class ViewStudentTableModel extends AbstractTableModel{
 	
+	private final List<String> listIntitulates = new ArrayList<String>();
+	private final List<Integer> listCoeff = new ArrayList<Integer>();
+	private final List<Integer> listNote = new ArrayList<Integer>();
 	
+		
 	/**
 	 * Comment for <code>serialVersionUID</code>
 	 */
 	private static final long serialVersionUID = 1L;
-
+	/**
+	 * 
+	 * @param cache
+	 */
 	public ViewStudentTableModel(Cache cache){
+		
+	}
+	
+	/**
+	 * 
+	 * @param student
+	 */
+	public void fillModel(Student student){
+	
+		
+		
 		
 	}
 	

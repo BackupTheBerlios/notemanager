@@ -13,7 +13,9 @@ import fr.umlv.symphonie.database.DriverClassNotFoundException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 /**
  * @author jraselin
@@ -36,15 +38,15 @@ public class ListStudent extends AbstractRequest {
 	 *  get listStudents
 	 *  @return an ArrayList of students 
 	 */
-	public Map<String,String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException {	
+	public List<String> getListStudents() throws ConnectionFailException,SQLException,DriverClassNotFoundException {	
 			
 			ResultSet resultSet = getResultSet();
-			Map<String,String> listStudents = new HashMap<String,String>();	
+			List<String> listStudents = new ArrayList<String>();	
 			while(resultSet.next())
 			{
 				String name = (String)resultSet.getObject("name");
 				String firstName = 	(String)resultSet.getObject("firstname");
-				listStudents.put(name,firstName);
+				listStudents.add(name + " " + firstName);
 			}			
 			return listStudents;	
 	}	
