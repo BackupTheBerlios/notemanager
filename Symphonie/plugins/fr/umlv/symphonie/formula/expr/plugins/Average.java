@@ -30,7 +30,7 @@ public class Average {
 		    	float oldValue;
 		    	float div = 1.0f;
 		    	
-		    	
+		    	 
 		    	ArrayList<String> result = new ArrayList<String>();
 		    	ArrayList<String> listCourses = courses.getList();
 		    	div = listCourses.size();

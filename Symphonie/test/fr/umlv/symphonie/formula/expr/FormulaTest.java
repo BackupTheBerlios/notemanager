@@ -26,7 +26,7 @@ public class FormulaTest extends TestCase {
     Formula formula;
     
     public void setUp()
-    {
+    { 
      System.out.println("Debut des tests");
      this.mediator = new FVMediator(new JTable(),true);
      this.formula = new Formula(mediator);   

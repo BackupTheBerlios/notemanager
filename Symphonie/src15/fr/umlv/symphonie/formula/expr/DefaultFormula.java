@@ -29,7 +29,6 @@ public class DefaultFormula extends IGFormColleague implements Formula {
 	/**
 	 * Call a superConstructor with mediator's param
 	 * @param mediator 
-	 * 
 	 */
 	public DefaultFormula(FormulaViewMediator mediator)
 	{
