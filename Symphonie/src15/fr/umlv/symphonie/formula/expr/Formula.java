@@ -21,6 +21,8 @@ public interface Formula {
 	 * @param request is the formula calculate by module
 	 * @return sablecc's result
 	 */
+	
+	
 	public ArrayList<String> getFormula(String request) throws Exception;
 	
 }
