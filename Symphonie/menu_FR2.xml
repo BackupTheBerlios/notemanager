@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<menuBar>
+<file>Fichier</file>
+<fileSave>Enregistrer</fileSave> // Tool
+<fileExit>Quitter</fileExit>
+<fileExport>Exporter</fileExport> // Cont 
+<filePrint>Imprimer</filePrint> // Cont + Tool
+<fileImport>Importer</fileImport> // Cont 
+
+<edit>Edition</edit>
+<editUndo>Annuler/Retour</editUndo> // Cont + Tool
+<editRedo>Retablir</editRedo> // Cont + Tool
+<editCut>Couper</editCut> // Cont + Tool
+<editPaste>Coller</editPaste> // Cont + Tool
+<editDelete>Supprimer</editDelete> 
+<editSelectAll>Tout Selectionner</editSelectAll>
+
+<view>Affichage</view> // cont 
+<viewJury>Vue Jury</viewJury> // Cont + Tool dans un sous menu
+<viewTeacher>Vue Enseignant</viewTeacher>// Cont + Tool dans un sous menu
+<viewStudent>Vue Etudiant</viewStudent>// Cont + Tool dans un sous menu
+
+<formula>Formule</formula> // Cont + Tool 
+<formulaAdd>Ajouter Formule</formulaAdd> // Cont + Tool dans un sous menu
+<formulaDelete>Supprimer Formule</formulaDelete>// Cont + Tool dans un sous menu
+<formulaEdit>Editer Formule</formulaEdit>// Cont + Tool dans un sous menu
+<formulaPlugin>Plug-In</formulaPlugin>// Cont + Tool dans un sous menu
+<formulaPluginAdd>Ajouter</formulaPluginAdd>// Cont + Tool dans un sous menu
+<formulaPluginRemove>Enlever</formulaPluginRemove>// Cont + Tool dans un sous menu
+
+<tools>Outils</tools> // Cont + Tool 
+<toolsConnection>Paramètres De Connection</toolsConnection>
+<toolsStats>Statistiques</toolsStats>// Cont + Tool dans un sous menu
+<toolsAdmin>Mode Administrateur</toolsAdmin>// Cont + Tool dans un sous menu
+
+<adminInsertStudent>Insérer Etudiant</adminInsertStudent> // Cont + Tool dans un sous menu
+<adminDeleteStudent>Supprimer Etudiant</adminDeleteStudent>// Cont + Tool dans un sous menu
+<adminInsertCourse>Insérer Matière</adminInsertCourse>// Cont + Tool dans un sous menu
+<adminDeleteCourse>Supprimer Matière</adminDeleteCourse>// Cont + Tool dans un sous menu
+</menuBar>
